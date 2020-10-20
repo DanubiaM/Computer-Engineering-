@@ -1,2 +1,2 @@
 # Computer-Engineering-
-Conteúdo e algoritmos implementados no curso.
+Algoritmos implementados em algumas disciplinas durante a acadêmia.
