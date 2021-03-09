@@ -46,7 +46,7 @@ public class Item {
     public float getValorTotal(){
         return this.ValorTotal;
     }
-    public void setValorTotal(float valorTotal){
+    private void setValorTotal(float valorTotal){
         this.ValorTotal = valorTotal;
     }
     private void calculaValorTotal(){
