@@ -94,7 +94,7 @@ public class mainProjetoLPI1 {
             }            
         }while(opcao != 4);
     }
-    public static void acessarPedido(){
+    public static void acessarPedido() throws ParseException{
         Scanner scanf = new Scanner(System.in);
         
         int opcao = 0;
@@ -110,24 +110,42 @@ public class mainProjetoLPI1 {
             opcao = scanf.nextInt();
             switch (opcao){
                 case 1 -> {
-//                    System.out.println("Id: ");
-//                    int id = scanf.nextInt();
-//                    System.out.println("Descrição: ");
-//                    String descricao = scanf.next();
-//                    System.out.println("Valor Padrão: ");
-//                    float valorP = scanf.nextFloat();
-//                    addPedido(id, descricao, valorP);
-//                    break;
+                    Pedido newPedido = new Pedido();
+                    
+                    System.out.println("Id: ");
+                    int id = scanf.nextInt();
+                    newPedido.setId(id);
+                    System.out.println("Data: ");
+                    String data = scanf.next();
+                    //Conversao de string para Date.
+                    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+                    Date dataFormatada = formato.parse(data);                    
+                    newPedido.setData(dataFormatada);
+                    
+                    System.out.println("Nome do cliente: ");
+                    String nomeCliente = scanf.next();
+                    newPedido.setNomeCliente(nomeCliente);
+                    System.out.println("Valor Total: ");
+                    float vTotal = scanf.nextFloat();
+                    newPedido.setValorTotal(vTotal);
+
+                    
+                    addPedido(newPedido);
+                    break;
                 }
                 case 2 ->{
                     if(listaPedido.size() == 0){
                         System.out.println("Não existe Pedidos lançados");
                     }else{
-                        for(Pedido p : listaPedido){
-//                            System.out.println("Id       : "+Integer.toString(p.getId()));
-//                            System.out.println("Descrição: "+p.getDescricao());
-//                            
-                              System.out.println("------------------------------------------------------");
+                        for(Pedido p : listaPedido){              
+                            
+                            System.out.println("Id                  :" +Integer.toString(p.getId()));
+                            System.out.println("Data                :" + p.getData());
+                            System.out.println("Nome do Cliente     :" + p.getNomeCliente());
+                            System.out.println("Valor Total         :" + Float.toString(p.getValorTotal()));
+//                            System.pit.println("Itens");
+                            
+                            System.out.println("------------------------------------------------------");
                         }
                     }
                     break;
@@ -139,6 +157,9 @@ public class mainProjetoLPI1 {
                     for(Pedido p : listaPedido){
                         if(p.getId() == id){
                             listaPedido.remove(p);
+                            String nomeCliente = p.getNomeCliente();
+                            System.out.println("Pedido do cliente "+ nomeCliente + "removido com sucesso!\n" );
+                            break;
                         }
                     }
                     break;
@@ -161,6 +182,7 @@ public class mainProjetoLPI1 {
         public static void addPedido(Pedido newPedido){
             listaPedido.add(newPedido);
         }
+        
         
         
     
