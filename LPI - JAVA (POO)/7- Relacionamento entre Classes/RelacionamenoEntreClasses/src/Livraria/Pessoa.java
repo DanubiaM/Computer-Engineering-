@@ -15,6 +15,11 @@ public class Pessoa {
     private int idade;
     private String sexo;
     
+    Pessoa(String nm, int id, String sx){
+        setNome(nm);
+        setIdade(id);
+        setSexo(sx);
+    }
     private String getNome() {
         return nome;
     }
@@ -40,7 +45,7 @@ public class Pessoa {
     }
     
     public void fazerAniversario(){
-        
+        this.idade++;
     }
     
     
