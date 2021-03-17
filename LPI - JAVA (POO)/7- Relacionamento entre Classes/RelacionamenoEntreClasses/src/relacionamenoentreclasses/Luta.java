@@ -69,7 +69,7 @@ public class Luta {
             getDesafiado().apresentar();
             getDesafiante().apresentar();
             Random gerador = new Random();
-            int vencedor = gerador.nextInt(2);
+            int vencedor = gerador.nextInt(3);
             
             switch(vencedor){
                 case 0 -> {
