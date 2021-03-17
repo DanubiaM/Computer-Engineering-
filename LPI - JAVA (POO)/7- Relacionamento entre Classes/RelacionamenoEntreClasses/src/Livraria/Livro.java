@@ -18,6 +18,13 @@ public class Livro {
     private boolean aberto;
     private Pessoa leitor;
 
+    Livro(String _titulo, String _autor, int _totalPag, int _pagAtual, boolean _aberto, Pessoa _leitor){
+        setTitulo(_titulo);
+        setTotalPag(_totalPag);
+        setPagAtual(_pagAtual);
+        setAberto(_aberto);
+        setLeitor(_leitor);
+    }
     private String getTitulo() {
         return titulo;
     }
@@ -71,6 +78,9 @@ public class Livro {
         System.out.println("Titulo         :"+ getTitulo());
         System.out.println("Feito por      :"+getAutor());
         System.out.println("Possui "+getTotalPag()+" paginas");
+        System.out.println("Quem esta lendo:"+getLeitor().getNome());
+        System.out.println("e esta na pagina:"+getPagAtual());
+
   
     } 
     
