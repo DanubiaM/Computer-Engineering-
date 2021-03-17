@@ -11,6 +11,10 @@ package Livraria;
  */
 public class Pessoa {
 
+    private String nome;
+    private int idade;
+    private String sexo;
+    
     private String getNome() {
         return nome;
     }
@@ -34,9 +38,10 @@ public class Pessoa {
     private void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    private String nome;
-    private int idade;
-    private String sexo;
+    
+    public void fazerAniversario(){
+        
+    }
     
     
 }
