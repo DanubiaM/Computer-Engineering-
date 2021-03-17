@@ -9,7 +9,7 @@ package Livraria;
  *
  * @author danub
  */
-public class Livro {
+public class Livro implements Publicacao {
 
     private String titulo;
     private String autor;
@@ -18,11 +18,11 @@ public class Livro {
     private boolean aberto;
     private Pessoa leitor;
 
-    Livro(String _titulo, String _autor, int _totalPag, int _pagAtual, boolean _aberto, Pessoa _leitor){
+    Livro(String _titulo, String _autor, int _totalPag, Pessoa _leitor){
         setTitulo(_titulo);
         setTotalPag(_totalPag);
-        setPagAtual(_pagAtual);
-        setAberto(_aberto);
+        setPagAtual(0);
+        setAberto(false);
         setLeitor(_leitor);
     }
     private String getTitulo() {
@@ -83,5 +83,35 @@ public class Livro {
 
   
     } 
+
+    @Override
+    public void abrir() {
+        setAberto(true);
+    }
+
+    @Override
+    public void fechar() {
+        setAberto(false);
+    }
+
+    @Override
+    public void folhear(int p) {
+        setPagAtual(getPagAtual()+ p);
+    }
+
+    @Override
+    public void avancarPag() {
+        setPagAtual(getPagAtual()+ 1);
+
+    }
+
+    @Override
+    public void voltarPag() {
+        if(getPagAtual() > 0){
+             setPagAtual(getPagAtual()- 1);
+        }else{
+            System.out.println("O livro ja esta na primeira pagina");
+        }
+    }
     
 }
