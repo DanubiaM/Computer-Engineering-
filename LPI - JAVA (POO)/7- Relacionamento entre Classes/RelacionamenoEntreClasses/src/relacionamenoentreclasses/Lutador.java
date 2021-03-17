@@ -16,10 +16,12 @@ public class Lutador {
     private int vitorias;
     private int derrotas;
     private int empates;
+
+   
     
     
     /*Construtor*/
-    public void Lutador(String nm, String nc, int id, int ps, int al, int vt, int dr, int em ){
+    Lutador(String nm, String nc, int id, float al, float ps, int vt, int dr, int em ){
         setNome(nm);
         setNacionalidade(nc);
         setIdade(id);
@@ -59,15 +61,7 @@ public class Lutador {
 
     public void setPeso(float peso) {
         this.peso = peso;
-        if(peso<52.2 || peso > 120.2){
-            setCategoria("Invalido");
-        }else if ( peso <= 70.3){
-            setCategoria("Leve");
-        }else if(peso<=83.9){
-            setCategoria("Médio");
-        } else if( peso <=120.2){
-            setCategoria("Pesado");
-        }
+        setCategoria(peso);
     
    }
         
@@ -85,8 +79,16 @@ public class Lutador {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategoria(float  peso) {
+        if(peso<52.2 || peso > 120.2){
+            this.categoria = "Invalido";
+        }else if ( peso <= 70.3){
+            this.categoria = "Leve";
+        }else if(peso<=83.9){
+            this.categoria = "Médio";
+        } else if( peso <=120.2){
+            this.categoria = "Pesado";
+        }
     }
 
     public int getVitorias() {
@@ -115,17 +117,34 @@ public class Lutador {
    
     public void apresentar(){
         System.out.println("----------------COM VOCÊS-----------:");
-        System.out.println("Nome: " + this.nome);
-        System.out.println("Nacionalidade: "+ this.nacionalidade);
-        System.out.println("Idade: "+ this.altura);
-        System.out.println("Peso: "+this.peso);
-        System.out.println("Altura: "+this.altura);
-        System.out.println("Categoria: "+this.categoria);
-        System.out.println("Vitorias: "+this.vitorias);
-        System.out.println("Derrotas: "+this.derrotas);
-        System.out.println("Empates: "+this.empates);    
+        System.out.println("Nome: " + getNome());
+        System.out.println("Nacionalidade: "+ getNacionalidade());
+        System.out.println("Idade: "+ getIdade());
+        System.out.println("Peso: "+ getPeso());
+        System.out.println("Altura: "+ getAltura());
+        System.out.println("Categoria: "+ getCategoria());
+        System.out.println("Vitorias: "+ getVitorias());
+        System.out.println("Derrotas: "+ getDerrotas());
+        System.out.println("Empates: "+ getEmpates());    
         
     }
     
+    public void ganharLuta(){
+        setVitorias(getVitorias() + 1);
+    }
+    public void perderLuta(){
+        setDerrotas(getDerrotas() +1);
+    }
     
+    public void empatarLuta(){
+        setEmpates(getEmpates() +1);
+    }
+    
+    public void status(){
+        System.out.println(getNome());
+        System.out.println("Possui o peso: "+ getPeso());       
+        System.out.println("Tem "+ getVitorias() + " vitorias");
+        System.out.println(getDerrotas()+" derrotas ");
+        System.out.println("e "+ getEmpates() + "empates");     
+    }
 }
