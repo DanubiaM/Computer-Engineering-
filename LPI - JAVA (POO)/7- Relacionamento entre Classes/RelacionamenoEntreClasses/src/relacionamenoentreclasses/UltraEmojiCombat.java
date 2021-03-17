@@ -9,13 +9,13 @@ package relacionamenoentreclasses;
  *
  * @author danub
  */
-public class RelacionamenoEntreClasses {
+public class UltraEmojiCombat {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         // TODO code application logic here
+        
+      
     }
     
 }
