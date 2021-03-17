@@ -24,8 +24,9 @@ public class UltraEmojiCombat {
         lutadores[4] = new Lutador("Spark", "Gracia", 41, 2.06f, 99.4f, 4, 2, 2);
         lutadores[5] = new Lutador("Añtonito", "Mexico", 41, 1.99f, 79.2f, 11, 4, 1);
         
-        
-        lutadores[4].status();
+       Luta UEC01 = new Luta();
+       UEC01.marcarLuta(lutadores[3], lutadores[2]);
+       UEC01.lutar();
         
         
     }

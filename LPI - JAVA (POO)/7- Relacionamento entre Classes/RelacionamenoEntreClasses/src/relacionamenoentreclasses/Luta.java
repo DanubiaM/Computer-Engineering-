@@ -5,72 +5,92 @@
  */
 package relacionamenoentreclasses;
 
+import java.util.Random;
+
 /**
  *
  * @author danub
  */
 public class Luta {
 
-    /**
-     * @return the desafiado
-     */
-    public Lutador getDesafiado() {
-        return desafiado;
-    }
-
-    /**
-     * @param desafiado the desafiado to set
-     */
-    public void setDesafiado(Lutador desafiado) {
-        this.desafiado = desafiado;
-    }
-
-    /**
-     * @return the desafiante
-     */
-    public Lutador getDesafiante() {
-        return desafiante;
-    }
-
-    /**
-     * @param desafiante the desafiante to set
-     */
-    public void setDesafiante(Lutador desafiante) {
-        this.desafiante = desafiante;
-    }
-
-    /**
-     * @return the rounds
-     */
-    public int getRounds() {
-        return rounds;
-    }
-
-    /**
-     * @param rounds the rounds to set
-     */
-    public void setRounds(int rounds) {
-        this.rounds = rounds;
-    }
-
-    /**
-     * @return the aprovada
-     */
-    public boolean isAprovada() {
-        return aprovada;
-    }
-
-    /**
-     * @param aprovada the aprovada to set
-     */
-    public void setAprovada(boolean aprovada) {
-        this.aprovada = aprovada;
-    }
     private Lutador desafiado;
     private Lutador desafiante;
     private int rounds;
     private boolean aprovada;
     
+    public Lutador getDesafiado() {
+        return desafiado;
+    }
+
+    public void setDesafiado(Lutador desafiado) {
+        this.desafiado = desafiado;
+    }
+
+    public Lutador getDesafiante() {
+        return desafiante;
+    }
+
+    public void setDesafiante(Lutador desafiante) {
+        this.desafiante = desafiante;
+    }
+
+    public int getRounds() {
+        return rounds;
+    }
+
+    public void setRounds(int rounds) {
+        this.rounds = rounds;
+    }
+
+    public boolean isAprovada() {
+        return aprovada;
+    }
+
+    public void setAprovada(boolean aprovada) {
+        this.aprovada = aprovada;
+    }
     
+    public  void marcarLuta(Lutador lutador_1, Lutador lutador_2){
+        if(lutador_1.getCategoria() ==  lutador_2.getCategoria()){
+            if(lutador_1.getNome() != lutador_2.getNome()){
+                setDesafiado(lutador_1);
+                setDesafiante(lutador_2);
+                setAprovada(true);
+            }else{
+                setDesafiado(null);
+                setDesafiante(null);
+                setAprovada(false);
+            }
+        }
+        
+    }
+    public void lutar(){
+        if(isAprovada() == true){
+            getDesafiado().apresentar();
+            getDesafiante().apresentar();
+            Random gerador = new Random();
+            int vencedor = gerador.nextInt(2);
+            
+            switch(vencedor){
+                case 0 -> {
+                    System.out.println("Luta empatada");
+                    getDesafiado().empatarLuta();
+                    getDesafiante().empatarLuta();
+                }
+                case 1 ->{
+                    System.out.println("Ganhou "+ getDesafiado().getNome());
+                    getDesafiado().ganharLuta();
+                    getDesafiante().perderLuta();
+                }
+                case 2 ->{
+                    System.out.println("Ganhou "+ getDesafiante().getNome());
+                    getDesafiado().perderLuta();
+                    getDesafiante().ganharLuta();
+                }
+             }
+        }else{
+            System.out.println("Luta não aprovada!");
+        }
+    }
     
 }
