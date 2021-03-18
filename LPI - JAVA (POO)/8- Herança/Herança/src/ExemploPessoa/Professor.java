@@ -9,7 +9,7 @@ package ExemploPessoa;
  *
  * @author danub
  */
-public class Professor {
+public class Professor extends Pessoa {
 
     public String especialidade;
     public float salario;

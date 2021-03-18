@@ -11,10 +11,10 @@ package ExemploPessoa;
  */
 public class Funcionario extends Pessoa{
 
-    public String setor;
-    public boolean trabalhando;
+    private String setor;
+    private boolean trabalhando;
     
-    public void mudarTrabalgo(String newSetor){
+    public void mudarTrabalho(String newSetor){
         this.setor = newSetor;
     }
     public String getSetor() {

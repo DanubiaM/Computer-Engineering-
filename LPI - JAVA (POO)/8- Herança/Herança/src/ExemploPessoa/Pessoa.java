@@ -2,9 +2,9 @@
 package ExemploPessoa;
 public class Pessoa {
     //atributos
-    String nome;
-    int idade;
-    String sexo;
+    private String nome;
+    private int idade;
+    private String sexo;
     
     public void fazerAniversario(){
         setIdade(this.idade+1);
