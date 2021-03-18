@@ -20,6 +20,7 @@ public class Livro implements Publicacao {
 
     Livro(String _titulo, String _autor, int _totalPag, Pessoa _leitor){
         setTitulo(_titulo);
+        setAutor(_autor);
         setTotalPag(_totalPag);
         setPagAtual(0);
         setAberto(false);
