@@ -23,7 +23,7 @@ public class Pessoa {
         return idade;
     }
 
-    public setIdade(int idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
