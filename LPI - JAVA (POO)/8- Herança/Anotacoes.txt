@@ -1,0 +1,36 @@
+Anotações:
+
+Dentro de uma árvore hierarquica de classes temos que:
+	- A classe abstrata é a classe raiz, sendo chamada de supeclasse ou classe mae;
+	- Seus filhos é chamado de subclasse;
+	- A relação entre os netos, bisnetos, tataranetos e etc, é chamada de Ancestralidade;
+	- A relação entre a raiz e seus demais é chamada de descendente.
+	- Os filhos que não possuem filhos são chamados de folha.
+	- A leitura de cima para baixo é chamada de especializada.
+	- A leitura de baixo para cima é chamada de generica.
+
+	Exemplo:
+				 A
+		   AA            AB	       AC
+		  AAA         ABA   ABB	       ACA
+		          ABAA  ABAB
+		-Temos que: ~ A é raiz;
+			    ~ AA AB AC é filho de A
+			    ~ AAA ABA ABB ACA é descendente de A, assim como ABAA e ABAB
+			    ~ ABAA ABAB é descentente de AB
+			    ~ A é ancestral de ABAA ABAB AAA ABA ABB ACA
+		 	    ~ Filhos não podem ser chamados de descentes.
+
+
+TIPOS DE METODOS E CLASSES:
+	->CLASSES
+			->ABSTRATA : Não pode ser instanciada (virar objeto). So pode server
+					como progenitora (raiz).
+			-> FINAL: Não pode ser herdada por outra classe (mae). Deve
+					ser apenas folha (filha sem filhos).
+	-> MÉTODOS
+			-> ABSTRATO: Declarado, mas nao imeplementado na progenitora (raiz).
+					 Usado em Interfaces.
+			-> FINAL: Não pode ser sobreescrito pelas suas sub-classes. Apenas herdado.
+					Ou seja, não pode ter sobrecarga de metodo. Não pode gerar uma especialização dele.
+ 
