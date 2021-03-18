@@ -15,8 +15,9 @@ public class Bolsista extends Aluno{
     public void renovasBolsa(){
         System.out.println("Bolsa renovada");
     }
-    
-    public void pagarMensalidade(){
+
+    @Override
+    public void pagarMesalidade(){
         System.out.println("Aluno Bolsista! Mensalidade paga!");
     };
     
