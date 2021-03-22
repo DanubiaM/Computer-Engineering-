@@ -1,0 +1,27 @@
+COMO SERIA A CRIAÇÃO DE UMA VARIAVEL GLOBAL?
+
+Imagine a seguinte situação: Ao instanciar uma classe Aluno, você deseja gravar a 
+quantidade de alunos. Pensariamos que para isso poderiamos adicionar um contador
+no construtor da classe de modo que some +1 ao total de alunos, como no exemplo:
+
+class Aluno{
+	private int totalAlunos;
+	//outros atributos
+
+	Aluno(){
+		this.totalAlunos ++;
+	}
+}
+
+Entretando, desta maneira iria acontecer um problema, toda vez que a classe for
+intanciada o totalAlunos iria somar +1, sendo assim nunca iria continuar a sua somatória.
+Para isto, devemos utilizar um atributo de classe. O atributo static permite que
+crie um atributo "global" de modo que toda vez que instanciamos a classe seja realizado
+as ações com ele sem que se perca as anteriores, pois é um atributo  de classe.
+Então para resolveros este problema poderiamos escrever o codigo da seguinte maneira:
+class Aluno{
+	private static totalAlunos;
+
+	Aluno(){
+		Aluno.totalAluno++;;
+	}
