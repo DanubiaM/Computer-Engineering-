@@ -1,0 +1,28 @@
+		POLIMORFISMO
+	O QUE É?
+		->Permite que um mesmo nome represente vários comportamentos diferentes.
+
+	O QUE É ASSINATURA DO MÉTODO?
+		->Possui a mesma assinatura quando os metodos possuem quantidade e os mesmo tipos de parametros.
+
+	TIPOS DE POLIMORFISMO:
+		-SOBREPOSIÇÃO:
+			->É quando substituimos um método de uma superclasse, na sua subclasse, usando a mesma assinatura.
+
+		-SOBRECARGA:
+			->
+OVERRIDE
+
+- Como fazer para chamar um metodo da classe mae dentro de uma sobrecarga?
+	-> Bom para isto basta que se utilize o super.nomedometodo
+
+	Exemplo:
+		Gerente extends funcionario{
+		
+		@Override
+		public void getBonificacao(){
+			return super.getBonificacao * 0.7;
+
+		}
+	Desta maneira se o metodo getBonificacao da classe funcionario atualizar
+	o getBonificao da classe Gerente também sera atualziado.
