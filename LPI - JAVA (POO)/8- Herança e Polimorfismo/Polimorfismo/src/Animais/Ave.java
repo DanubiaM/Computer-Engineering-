@@ -25,6 +25,9 @@ public class Ave extends Animal{
         System.out.println("Emitindo som de ave!");
     }
     
+    public void fazerNinho(){
+        System.out.println("Fazendo ninho");
+    }
     //metodos acessores
     public String getCorPena(){
         return this.corPena;
