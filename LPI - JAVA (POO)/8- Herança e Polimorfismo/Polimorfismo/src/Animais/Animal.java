@@ -18,26 +18,26 @@ public abstract class Animal {
     public abstract void locomover();
     public abstract void alimentar();
     public abstract void emitirSom();
-//    
-//    //metodos acessores nao necessários.
-//    public float getPeso(){
-//        return this.peso;
-//    }
-//    public void setPeso(float _peso){
-//        this.peso = _peso;
-//    }
-//    public int getIdade(){
-//        return this.idade;
-//    }
-//    public void setIdade(int _idade){
-//        this.idade = _idade;
-//    }
-//    public int getMembros(){
-//        return this.membros;
-//    }
-//    public void setMembros(int _membros){
-//        this.membros = _membros;
-//    }
+    
+    //metodos acessores 
+    public float getPeso(){
+        return this.peso;
+    }
+    public void setPeso(float _peso){
+        this.peso = _peso;
+    }
+    public int getIdade(){
+        return this.idade;
+    }
+    public void setIdade(int _idade){
+        this.idade = _idade;
+    }
+    public int getMembros(){
+        return this.membros;
+    }
+    public void setMembros(int _membros){
+        this.membros = _membros;
+    }
     
     
 }
