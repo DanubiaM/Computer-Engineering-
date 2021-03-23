@@ -11,6 +11,20 @@ package Banco;
  */
 public class ControleBancario {
     public static void main(String[] args){
+        Diretor d = new Diretor();
+        
+        d.setIdade(52);
+        d.setNome("Antonio");
+        d.setCpf("1221551521");
+        
+        SistemaInterno acessar = new SistemaInterno();
+        
+        acessar.setSenha(51);
+        acessar.login(d);
+        acessar.setSenha(52);
+        acessar.login(d);
+
+
         
     }
 }

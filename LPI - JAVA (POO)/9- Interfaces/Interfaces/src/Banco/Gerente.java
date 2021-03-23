@@ -9,6 +9,6 @@ package Banco;
  *
  * @author danub
  */
-public class Gerente extends Funcionario{
+public class Gerente extends AutenticaFuncionario{
     
 }

@@ -19,5 +19,10 @@ public class SistemaInterno {
     public void login(AutenticaFuncionario af){
         
         boolean ok = af.autentica(this.senha);
+        if(ok == true){
+            System.out.println("Autenticado");
+        }else{
+        System.out.println("Não altenticado");
+        }        
     }
 }
