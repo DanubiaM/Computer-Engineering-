@@ -10,7 +10,7 @@
 			->É quando substituimos um método de uma superclasse, na sua subclasse, usando a mesma assinatura.
 
 		-SOBRECARGA:
-			->
+			-> É quando dentro de uma classe, escrevemos o mesmo metodo de varias maneiras com assinaturas diferente.
 OVERRIDE
 
 - Como fazer para chamar um metodo da classe mae dentro de uma sobrecarga?
