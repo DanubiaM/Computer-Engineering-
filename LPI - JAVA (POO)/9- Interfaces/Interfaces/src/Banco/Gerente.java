@@ -9,6 +9,13 @@ package Banco;
  *
  * @author danub
  */
-public class Gerente extends AutenticaFuncionario{
+public class Gerente extends Funcionario implements Autenticavel{
     
+    
+    public boolean autentica(int senha){
+        if(senha == super.getIdade() ){
+            return true;
+        }else return false;
+
+    }
 }
