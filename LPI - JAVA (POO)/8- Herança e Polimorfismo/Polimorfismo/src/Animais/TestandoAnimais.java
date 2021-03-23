@@ -48,14 +48,17 @@ public class TestandoAnimais {
         canguru.setIdade(4);
         canguru.locomover();
         
+        Tartaruga tartaruga = new Tartaruga();        
+        tartaruga.locomover();
+        
         Cachorro cachorro = new Cachorro();
         cachorro.enterrarOsso();
         cachorro.abanarRabo();
         cachorro.alimentar();
+        cachorro.reagir("Ola");
+        cachorro.reagir(17);
         
-        Tartaruga tartaruga = new Tartaruga();
-        
-        tartaruga.locomover();
+       
         
         
     }

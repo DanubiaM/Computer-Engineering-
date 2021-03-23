@@ -11,9 +11,14 @@
 
 		-SOBRECARGA:
 			-> É quando dentro de uma classe, escrevemos o mesmo metodo de varias maneiras com assinaturas diferente.
+			-> Não se pode ter sobrecarga, com assinatura de igual quantidade e tipo!
+			Exemplo de invalides:
+			public void reagir(int y, int x);
+			public void reagir (int num, int dat);
+			->Observe que assinatura só pode ser igual em sobreposição, em sobrecarga deve ser OBRIGATORIAMENTE DIFERENTE!
 OVERRIDE
 
-- Como fazer para chamar um metodo da classe mae dentro de uma sobrecarga?
+- Como fazer para chamar um metodo da classe mae dentro de uma sobreposição?
 	-> Bom para isto basta que se utilize o super.nomedometodo
 
 	Exemplo:
