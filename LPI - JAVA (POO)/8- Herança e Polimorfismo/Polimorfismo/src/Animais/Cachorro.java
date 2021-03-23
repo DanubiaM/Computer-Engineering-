@@ -17,4 +17,20 @@ public class Cachorro extends Mamifero{
     public void abanarRabo(){
         System.out.println("Abanando rabo");
     }
+    
+    public void reagir( String fala){
+        if(fala == "Ola"){
+            System.out.println("Abanar");
+        }else if (fala == "Vai apanhar"){
+            System.out.println("Rosna");
+        }         
+    }
+    public void reagir(int horas){
+        if(horas < 12){
+            System.out.println("Abanar");
+        }else if( horas > 12){
+            System.out.println("Rosna");
+
+        }
+    }
 }
