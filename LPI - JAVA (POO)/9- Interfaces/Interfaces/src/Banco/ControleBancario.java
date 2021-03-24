@@ -24,7 +24,6 @@ public class ControleBancario {
         acessar.setSenha(52);
         acessar.login(d);
 
-
-        
+          
     }
 }

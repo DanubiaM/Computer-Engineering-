@@ -16,7 +16,7 @@ public class SistemaInterno {
         this.senha = senha;
     }
     
-    public void login(AutenticaFuncionario af){
+    public void login(Autenticavel af){
         
         boolean ok = af.autentica(this.senha);
         if(ok == true){
