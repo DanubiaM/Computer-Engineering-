@@ -14,7 +14,23 @@ import java.util.Scanner;
 public class CalculoIMC {
     
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+        Scanner scanf = new Scanner(System.in);
+        int opcao = -1;
+        
+        do{
+           System.out.println("CALCULO DE IMC");
+           System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
+           System.out.println("INFORME");
+           System.out.println("[1] CALCULAR IMC MASCULINO");
+           System.out.println("[2] CALCULAR IMC FEMININO");
+           System.out.println("[0] SAIR");
+           opcao = scanf.nextInt();
+           if(opcao == 1){
+
+           }else if (opcao == 2){
+               
+           }            
+        }while(opcao != 0);
         
     }
     
