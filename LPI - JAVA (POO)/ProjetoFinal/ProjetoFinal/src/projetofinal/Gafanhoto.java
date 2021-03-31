@@ -9,19 +9,21 @@ package projetofinal;
  *
  * @author danub
  */
-public class Gafanhoto {
-    private String login;
+public class Gafanhoto extends Pessoa{
+    private Pessoa login;
     private int totAssistido;
     
     public void viuMaisUm(){
         this.totAssistido++;
     }
-    public String getLogin() {
+    public Pessoa getLogin() {
         return login;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setLogin(String nome, int idade, String sexo) {
+        super.setNome(nome);
+        super.setIdade(idade);
+        super.setSexo(sexo);
     }
 
     public int getTotAssistido() {
