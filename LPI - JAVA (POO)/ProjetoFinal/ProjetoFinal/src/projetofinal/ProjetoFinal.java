@@ -19,7 +19,8 @@ public class ProjetoFinal {
         
         Gafanhoto g = new Gafanhoto("Danubia", 21,"F", "dan");
         System.out.println(g.toString());
-
+        System.out.println("\\");
+        
         Video guanabara = new Video("Curso POO");        
         System.out.println(guanabara.toString());
         System.out.println("\\");
@@ -33,6 +34,8 @@ public class ProjetoFinal {
         Visualizacao x = new Visualizacao(g, guanabara);
 
         System.out.println("\\");
+        x.avaliar();
+        x.avaliar(25);
         System.out.println(v.toString());
         
 
