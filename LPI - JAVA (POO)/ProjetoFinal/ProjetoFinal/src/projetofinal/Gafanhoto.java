@@ -27,7 +27,7 @@ public class Gafanhoto extends Pessoa{
         return login;
     }
 
-    public void setLogin() {
+    public void setLogin(String login) {
        this.login = login;
     }
 
