@@ -10,19 +10,20 @@ package projetofinal;
  * @author danub
  */
 public class Gafanhoto extends Pessoa{
-    private Pessoa login;
+    private String login;
     private int totAssistido;
 
     public Gafanhoto(String nome, int idade, String sexo, String login) {
         super(nome, idade, sexo);
         this.totAssistido = 0;
+        this.login = login; 
     }
     
     
     public void viuMaisUm(){
         this.totAssistido++;
     }
-    public Pessoa getLogin() {
+    public String getLogin() {
         return login;
     }
 

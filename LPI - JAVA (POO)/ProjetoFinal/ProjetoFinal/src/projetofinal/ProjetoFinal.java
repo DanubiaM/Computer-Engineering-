@@ -19,7 +19,7 @@ public class ProjetoFinal {
         
         Gafanhoto g = new Gafanhoto("Danubia", 21,"F", "dan");
         g.viuMaisUm();
-        g.toString();
+        System.out.println(g.toString());
 
         Video guanabara = new Video("Curso POO");
         
@@ -27,7 +27,7 @@ public class ProjetoFinal {
         guanabara.play();
         guanabara.pause();
         guanabara.like();
-        guanabara.toString();
+        System.out.println(guanabara.toString());
     }
     
 }
