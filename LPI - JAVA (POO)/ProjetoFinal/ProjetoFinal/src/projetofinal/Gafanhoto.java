@@ -12,6 +12,12 @@ package projetofinal;
 public class Gafanhoto extends Pessoa{
     private Pessoa login;
     private int totAssistido;
+
+    public Gafanhoto(String nome, int idade, String sexo, String login) {
+        super(nome, idade, sexo);
+        this.totAssistido = 0;
+    }
+    
     
     public void viuMaisUm(){
         this.totAssistido++;
@@ -20,17 +26,18 @@ public class Gafanhoto extends Pessoa{
         return login;
     }
 
-    public void setLogin(String nome, int idade, String sexo) {
-        super.setNome(nome);
-        super.setIdade(idade);
-        super.setSexo(sexo);
+    public void setLogin() {
+       this.login = login;
     }
 
     public int getTotAssistido() {
         return totAssistido;
     }
-
-   
+    
+    @Override
+    public String toString(){
+        return "Gafanhoto+"+super.toString()+"\n Login"+login;
+    }
     
     
 }
