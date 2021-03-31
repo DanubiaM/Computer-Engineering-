@@ -18,16 +18,25 @@ public class ProjetoFinal {
         // TODO code application logic 
         
         Gafanhoto g = new Gafanhoto("Danubia", 21,"F", "dan");
-        g.viuMaisUm();
         System.out.println(g.toString());
 
-        Video guanabara = new Video("Curso POO");
-        
+        Video guanabara = new Video("Curso POO");        
         System.out.println(guanabara.toString());
-        guanabara.play();
-        guanabara.pause();
+        System.out.println("\\");
+
+        Visualizacao v = new Visualizacao(g, guanabara);
+        System.out.println(v.toString());
         guanabara.like();
-        System.out.println(guanabara.toString());
+        System.out.println("\\");
+        System.out.println(v.toString());
+        
+        Visualizacao x = new Visualizacao(g, guanabara);
+
+        System.out.println("\\");
+        System.out.println(v.toString());
+        
+
+        
     }
     
 }
