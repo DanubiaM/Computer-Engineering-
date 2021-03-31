@@ -15,7 +15,20 @@ public class ProjetoFinal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODO code application logic 
+        
+        Pessoa p = new Pessoa();
+        p.setNome("Danubia");
+        p.setIdade(21);
+        p.setSexo("F");
+        p.ganharExp(14);
+        
+        System.out.println(p.getNome()+" "+ p.getIdade() +" anos "+ p.getSexo()+" "+ p.getExperiencia());
+        Video guanabara = new Video();
+        
+        guanabara.play();
+        guanabara.pause();
+        guanabara.like();
     }
     
 }
