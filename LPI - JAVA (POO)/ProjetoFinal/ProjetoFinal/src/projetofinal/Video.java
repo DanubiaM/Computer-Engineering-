@@ -11,16 +11,25 @@ package projetofinal;
  */
 public class Video implements AcoesVideo{
     private String titulo;
-    private String avaliacao;
+    private int avaliacao;
     private int views;
     private int curtidas;
     private boolean reproduzindo;
+    //construtor
+    public Video(String titulo){
+        this.titulo = titulo;
+        this.avaliacao=1;
+        this.curtidas=0;
+        this.views=0;
+        this.reproduzindo = false;
+    }
     
     @Override
     public void play(){
         this.reproduzindo = true;
         System.out.println("Video em reprodução!");
     }
+    
     @Override 
     public void pause(){
         this.reproduzindo = false;
@@ -38,11 +47,11 @@ public class Video implements AcoesVideo{
         this.titulo = titulo;
     }
 
-    public String getAvaliacao() {
+    public int getAvaliacao() {
         return avaliacao;
     }
 
-    public void setAvaliacao(String avaliacao) {
+    public void setAvaliacao(int avaliacao) {
         this.avaliacao = avaliacao;
     }
 
@@ -62,7 +71,10 @@ public class Video implements AcoesVideo{
         return reproduzindo;
     }
 
-
+    @Override
+    public String toString(){
+        return "Video{"+"titulo="+titulo+", avalicacao="+ avaliacao+", views="+views+", curtidas="+curtidas+", reproduzindo="+reproduzindo+"}";
+    }
     
     
 }
