@@ -51,5 +51,8 @@ public abstract class Pessoa {
     protected int getExperiencia() {
         return experiencia;
     }    
-    
+     @Override
+     public String toString(){
+         return "Pessoa{"+",titulo= "+nome+",idade= "+idade+",sexo "+sexo+",experiencia "+experiencia+"}";
+     }
 }
