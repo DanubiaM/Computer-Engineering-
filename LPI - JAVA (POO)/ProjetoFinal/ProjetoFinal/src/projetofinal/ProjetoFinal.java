@@ -17,13 +17,11 @@ public class ProjetoFinal {
     public static void main(String[] args) {
         // TODO code application logic 
         
-        Pessoa p = new Pessoa();
-        p.setNome("Danubia");
-        p.setIdade(21);
-        p.setSexo("F");
-        p.ganharExp(14);
+        Gafanhoto gafanhoto = new Gafanhoto();
         
-        System.out.println(p.getNome()+" "+ p.getIdade() +" anos "+ p.getSexo()+" "+ p.getExperiencia());
+        gafanhoto.setLogin("Danubia", 21,"F");
+//        System.out.println(gafanhoto.getLogin());
+        System.out.println(gafanhoto.getNome()+" "+ gafanhoto.getIdade() +" anos "+ gafanhoto.getSexo()+" "+ gafanhoto.getExperiencia());
         Video guanabara = new Video();
         
         guanabara.play();
