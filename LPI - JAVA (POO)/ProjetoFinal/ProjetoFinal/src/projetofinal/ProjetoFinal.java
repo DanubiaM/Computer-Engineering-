@@ -22,8 +22,8 @@ public class ProjetoFinal {
         gafanhoto.setLogin("Danubia", 21,"F");
 //        System.out.println(gafanhoto.getLogin());
         System.out.println(gafanhoto.getNome()+" "+ gafanhoto.getIdade() +" anos "+ gafanhoto.getSexo()+" "+ gafanhoto.getExperiencia());
-        Video guanabara = new Video();
-        
+        Video guanabara = new Video("Curso POO");
+        System.out.println(guanabara.toString());
         guanabara.play();
         guanabara.pause();
         guanabara.like();
