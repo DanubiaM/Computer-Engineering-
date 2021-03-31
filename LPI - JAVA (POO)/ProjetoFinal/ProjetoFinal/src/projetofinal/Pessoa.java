@@ -18,31 +18,31 @@ public class Pessoa {
     protected void ganharExp(int exp){
         this.experiencia+=exp;
     }
-    public String getNome() {
+    protected String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    protected void setNome(String nome) {
         this.nome = nome;
     }
 
-    public int getIdade() {
+    protected int getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    protected void setIdade(int idade) {
         this.idade = idade;
     }
 
-    public String getSexo() {
+    protected String getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    protected void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
-    public int getExperiencia() {
+    protected int getExperiencia() {
         return experiencia;
     }    
     
