@@ -19,7 +19,13 @@ public abstract class Empregado {
     private String departamento;
     
     
-    
+    public Empregado(int cod, String _nome, Date dataA, String _cargo, String _departamento){
+        this.codigo = cod;
+        this.nome = _nome;
+        this.dataAdmissao = dataA;
+        this.cargo = _cargo;
+        this.departamento = _departamento;
+    }
     public int getCodigo() {
         return codigo;
     }
