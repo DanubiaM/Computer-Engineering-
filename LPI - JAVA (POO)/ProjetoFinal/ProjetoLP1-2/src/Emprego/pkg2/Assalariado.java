@@ -15,13 +15,19 @@ public class Assalariado extends Empregado implements ICeletista{
     private float valorSalario;
 
     //construtor
-    public Assalariado(int cod, String _nome, Date dataA, String _cargo, String _departamento){
+    public Assalariado(int cod, String _nome, Date dataA, String _cargo, String _departamento, float _valorSalario){
         super(cod, _nome, dataA, _cargo, _departamento);
+        this.valorSalario = _valorSalario;
     }
     
     @Override
     public void informeRAIS(){
-        
+        System.out.println("Código:              "+super.getCodigo());
+        System.out.println("Nome:                "+super.getNome());
+        System.out.println("Data de Adimissão:   "+super.getDataAdmissao());
+        System.out.println("Cargo:               "+super.getCargo());
+        System.out.println("Departamento:        "+super.getDepartamento());
+        System.out.println("Valor do Salário:    "+this.valorSalario);
     }
     public float getValorSalario() {
         return valorSalario;
@@ -29,9 +35,7 @@ public class Assalariado extends Empregado implements ICeletista{
 
     public void setValorSalario(float valorSalario) {
         this.valorSalario = valorSalario;
-    }
-
-    
+    }  
     
     
 }
