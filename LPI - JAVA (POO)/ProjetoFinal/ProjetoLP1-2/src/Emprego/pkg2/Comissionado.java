@@ -14,8 +14,9 @@ import java.util.Date;
 public class Comissionado extends Empregado{
     private float porcentualComissao;
 
-    public Comissionado(int cod, String _nome, Date dataA, String _cargo, String _departamento){
+    public Comissionado(int cod, String _nome, Date dataA, String _cargo, String _departamento, float _porcentualComissao){
         super(cod, _nome, dataA, _cargo, _departamento);
+        this.porcentualComissao = _porcentualComissao;
 
     }
     public float getPorcentualComissao() {
