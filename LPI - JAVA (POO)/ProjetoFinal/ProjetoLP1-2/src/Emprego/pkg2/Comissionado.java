@@ -27,5 +27,8 @@ public class Comissionado extends Empregado{
         this.porcentualComissao = porcentualComissao;
     }
     
-    
+    @Override
+    public String toString(){
+        return "Comissionado = Codigo: "+ super.getCodigo()+ ", Nome: "+super.getNome()+", Data de Adimissão"+super.getDataAdmissao()+", Cargo: "+super.getCargo()+", Departamento: "+super.getDepartamento()+", Valor Hora:"+this.porcentualComissao;
+    }
 }
