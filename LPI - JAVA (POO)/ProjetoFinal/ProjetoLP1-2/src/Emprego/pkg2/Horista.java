@@ -14,9 +14,9 @@ import java.util.Date;
 public class Horista extends Empregado{
     private float valorHora;
 
-    public Horista(int cod, String _nome, Date dataA, String _cargo, String _departamento){
+    public Horista(int cod, String _nome, Date dataA, String _cargo, String _departamento, float _valorHora){
         super(cod, _nome, dataA, _cargo, _departamento);
-
+        this.valorHora = _valorHora;
     }
     public float getValorHora() {
         return valorHora;
@@ -25,5 +25,8 @@ public class Horista extends Empregado{
     public void setValorHora(float valorHora) {
         this.valorHora = valorHora;
     }
-    
+    @Override
+    public String toString(){
+        return "Horista= Codigo: "+ super.getCodigo()+ ", Nome: "+super.getNome()+", Data de Adimissão"+super.getDataAdmissao()+", Cargo: "+super.getCargo()+", Departamento: "+super.getDepartamento()+", Valor Hora:"+this.valorHora;
+    }
 }
