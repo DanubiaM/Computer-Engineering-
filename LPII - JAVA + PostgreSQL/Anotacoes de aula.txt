@@ -1,0 +1,12 @@
+SOLICITAR DADOS DE UM DB
+
+Podemos inserir, alterar, excluir e recuperar dados de uma tabela.
+
+-O Connection faz uma conexão  ao banco de dados, retornado pelo DriverManager
+
+STATEMENT
+- Statement é uma classe para disparar instruções sql ao banco de dados;
+- A instancia de statement é obtida atraves con.createStatement(), possibilitando disparar
+comandos sql ao DB. Exemplo de comandos/metodos: Execute(), executeQuery(), executeBatch() e executeUpdate();
+-A subinterface PreparedStatement executa  comandos sql com pré-compilação e parametros.
+
