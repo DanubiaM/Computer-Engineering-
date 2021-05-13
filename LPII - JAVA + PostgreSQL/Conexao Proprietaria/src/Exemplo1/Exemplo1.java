@@ -12,6 +12,11 @@ public class Exemplo1 {
       String usr= "postgres";
       String pass= "postgres";
       try{
+          //Dessa maneira é necesspario ter o jar do drivr associadoa o projeto
+          //Pode mudar a string(dentro do  Class.forName) em tempo de execução
+          //Não faz importação do drive.
+          //Registro implicitamente o drive por Class.forName
+          //Se tiver algo de errado na string nao é avisado
           Class.forName("org.postgresql.Driver");
           conexao = DriverManager.getConnection(url, usr, pass);
           System.out.println("Conexao estabelecida");

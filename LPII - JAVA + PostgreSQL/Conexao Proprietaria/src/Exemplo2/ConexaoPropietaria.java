@@ -13,8 +13,10 @@ public class ConexaoPropietaria {
     public static void main(String[] args) throws IOException{
         
         Properties proDB = new Properties();
+        //String de leitura de arquivos
         FileInputStream leitorArquivo;
         
+        //Parte que faz o carregamento do arquivo e verifica possiveis erros
         try{
             leitorArquivo = new FileInputStream("conexao.properties");
             proDB.load(leitorArquivo);
@@ -24,8 +26,10 @@ public class ConexaoPropietaria {
         }catch(IOException ex){
             System.out.println("Erro ao ler arquivo de configuracoes - "+ex.getMessage());
         }
+        //Faz a conexão com o Drive e verifica erros possiveis do BD e Drive        
         if(!proDB.isEmpty()){
             Connection conexao;
+            //Faz a carga das propriedades do arquivo
             String url = proDB.getProperty("url");
             String driver = proDB.getProperty("driver");
             String usr = proDB.getProperty("usuario");
