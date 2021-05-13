@@ -17,3 +17,10 @@ comandos sql ao DB. Exemplo de comandos/metodos: Execute(), executeQuery(), exec
 	- É uma forma de organizar melhor os comandos
 	- Só precisa preparar o Statement uma vez. Usando o script para alterar os dados varias vezes.
 	
+OBJETO ResultSet
+	-Usa para fazer consultas.
+	- Toda vez que disparar o scrip select, vai retornar um objeto do tipo ResultSet.
+	- É uma tabela virtual.
+	- Podemos caminhar dentro da tabela. Atraves dos comandos next(), previous(), absolute(), first(), last().
+	- Uma vez posicionado na linha que deseja, podemos usar os metodos gets para retornar o dado. getXXX();
+	Sendo XXX o tipo de dado.
