@@ -20,10 +20,10 @@ public class ResultSetTeste {
         Connection conexao = FabricaConexao.obterConexao();
         PreparedStatement comando = null;
     
-        //listando os produtos
-       
+               
         try{
             comando = conexao.prepareStatement("SELECT * FROM grupoproduto ORDER BY nome");
+            //Metodo executeQuery() é o responsavel por retornar um objeto do tipoResultSet
             ResultSet  resultado = comando.executeQuery();
             
             while(resultado.next()){                
