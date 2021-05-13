@@ -27,7 +27,7 @@ public class StatementTeste {
             comando.executeUpdate(sql);
             System.out.println("Inclusao realizada com sucesso!");
         }catch(SQLException ex){
-            System.out.println("Inclusa realizada com sucesso - "+ ex.getMessage());
+            System.out.println("Erro ao incluir grupo - "+ ex.getMessage());
         } finally {
             try{
                 comando.close();
