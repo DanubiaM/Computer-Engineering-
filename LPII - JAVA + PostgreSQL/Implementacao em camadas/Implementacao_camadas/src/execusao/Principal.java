@@ -34,7 +34,7 @@ public class Principal {
                         case AlterarAluno:
                             alterarAluno();
                             break;
-                        case ExcluirAluno():
+                        case ExcluirAluno:
                             excluirAluno();
                             break;
                         case PesqMatricula:
@@ -66,7 +66,7 @@ public class Principal {
             JOptionPane.QUESTION_MESSAGE));
         
         }catch (Exception ex){
-            JOptionPane.showMessageDialog(Null, "Digitacao inconsistente - "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
         }
 
         AlunoVO alunoVO = alunoNegocio.pesquisaMatricula(matricula);
@@ -85,7 +85,7 @@ public class Principal {
         int matricula = 0;
 
         try{
-            matricula = Integer.parseInt(JOption.showInputDialog(null, "Forneca a matricula do aluno", "Leitura de Dados",
+            matricula = Integer.parseInt(JOptionPane.showInputDialog(null, "Forneca a matricula do aluno", "Leitura de Dados",
             JOptionPane.QUESTION_MESSAGE));
         }catch (Exception ex){
             JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ ex.getMessage());
@@ -93,7 +93,7 @@ public class Principal {
 
         AlunoVO alunoVO = alunoNegocio.pesquisaMatricula(matricula);
         if (alunoVO != null){
-            alunoNegocio.exluir(alunoVO.getMatricula());
+            alunoNegocio.excluir(alunoVO.getMatricula());
         }else {
             JOptionPane.showMessageDialog(null, "Aluno não localizado");
         }
@@ -101,7 +101,7 @@ public class Principal {
     }
 
     //Pesquisa por meio de matricula
-    private static void PesquisarPorMatricula() throws NegocioException{
+    private static void pesquisarPorMatricula() throws NegocioException{
         int matricula = 0 ;
         try{
             matricula = Integer.parseInt(JOptionPane.showInputDialog(null, "Forneça a matricula do aluno", "Leitura de Dados",
@@ -118,7 +118,7 @@ public class Principal {
     }
 
     //Procura aluno por parte do nome, caso nao possua valor de entrada, retorna os 10 primeiros ordenados pelo nome.
-    private static void PesquisarPorNome() throws NegocioException{
+    private static void pesquisarPorNome() throws NegocioException{
         String nome = JOptionPane.showInputDialog(null, "Forneça o nome do aluno","Leitura de Dados", JOptionPane.QUESTION_MESSAGE);
 
         if (nome != null){
@@ -158,7 +158,7 @@ public class Principal {
     }
     
     private static AlunoVO lerDados(AlunoVO alunoTemp){
-        String nome, nomeMae, nomePae, logradouro, bairro, cidade;
+        String nome, nomeMae, nomePai, logradouro, bairro, cidade;
         int numero;
         EnumSexo sexo;
         EnumUF uf;
@@ -167,7 +167,7 @@ public class Principal {
             nome = JOptionPane.showInputDialog("Forneca o nome do aluno ", alunoTemp.getNome().trim());
             alunoTemp.setNome(nome);
 
-            nomeMae = JOptionPane.shpwInputDialog("Forneca o noem da mae do aluno ", alunoTemp.getNomeMae().trim());
+            nomeMae = JOptionPane.showInputDialog("Forneca o nome da mae do aluno ", alunoTemp.getNomeMae().trim());
             alunoTemp.setNomeMae(nomeMae);
 
             nomePai = JOptionPane.showInputDialog("Forneca o nome do pai do aluno ", alunoTemp.getNomePai().trim());
@@ -208,10 +208,10 @@ public class Principal {
         EnumMenu opcao;
         
         opcao = (EnumMenu) JOptionPane.showInputDialog(null, "Escolha uma opcao", "Menu", JOptionPane.QUESTION_MESSAGE, null, EnumMenu.values(),
-        EnumMenu.valores()[0]);
+        EnumMenu.values()[0]);
         
         if (opcao == null){
-            JOption.showMessageDialog(null, "Nenhuma opcao escolhida");
+            JOptionPane.showMessageDialog(null, "Nenhuma opcao escolhida");
             opcao = EnumMenu.Sair;
         }
         return opcao;
