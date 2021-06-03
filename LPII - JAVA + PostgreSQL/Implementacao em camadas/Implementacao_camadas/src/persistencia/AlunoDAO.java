@@ -5,6 +5,7 @@
  */
 
 package persistencia;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,10 +31,10 @@ public class AlunoDAO extends DAO{
             "logradouro, numero, bairro, cidade, uf )VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             comandoAlterar = conexao.getConexao().prepareStatement("UPDATE Aluno SET nome=?, nomemae=?, nomepai=?, sexo=?,"+"logragouro=?, numero=?, bairro=?, cidade=?, uf=? WHERE matricula=?");
             comandoExcluir = conexao.getConexao().prepareStatement("DELETE FROM Aluno WHERE matricula = ?");
-            comandoBuscar = conexao.getConexao().prepareStatement("SELECT * FROM Aluno WHERE matricula = ?");
+            comandoBuscaMatricula = conexao.getConexao().prepareStatement("SELECT * FROM Aluno WHERE matricula = ?");
         }catch(SQLException ex){
 
-            throw new PersistenciaExpection("Erro ao incluir novo aluno - "+ex.getMessage());
+            throw new PersistenciaException("Erro ao incluir novo aluno - "+ex.getMessage());
         }
     }
 
@@ -43,12 +44,12 @@ public class AlunoDAO extends DAO{
             comandoIncluir.setString(1, alunoVO.getNome());
             comandoIncluir.setString(2, alunoVO.getNomeMae());
             comandoIncluir.setString(3, alunoVO.getNomePai());
-            comandoIncluir.setInt(4, alunoVO.getSexo.ordinal());
-            comandoIncluir.setString(5, alunoVO.getEndereco.getLogradouro());
-            comandoIncluir.setString(6, alunoVO.getEndereco.getNumero());
-            comandoIncluir.setString(7, alunoVO.getEndereco.getBairro());
-            comandoIncluir.setString(8, alunoVO.getEndereco.getCidade());
-            comandoIncluir.setString(9, alunoVO.getEndereco.getUf().name);
+            comandoIncluir.setInt(4, alunoVO.getSexo().ordinal());
+            comandoIncluir.setString(5, alunoVO.getEndereco().getLogradouro());
+            comandoIncluir.setInt(6, alunoVO.getEndereco().getNumero());
+            comandoIncluir.setString(7, alunoVO.getEndereco().getBairro());
+            comandoIncluir.setString(8, alunoVO.getEndereco().getCidade());
+            comandoIncluir.setString(9, alunoVO.getEndereco().getUf().name());
             retorno = comandoAlterar.executeUpdate();
 
         }catch(SQLException ex){
