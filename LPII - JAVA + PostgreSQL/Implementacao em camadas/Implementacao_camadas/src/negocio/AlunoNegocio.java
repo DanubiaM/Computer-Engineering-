@@ -23,7 +23,7 @@ public class AlunoNegocio {
 
     }
 
-    public void inserir(AlunoVO alunoVO) throws NegocioException{
+    public void inserir (AlunoVO alunoVO) throws NegocioException{
         String mensagemErros = this.validarDados(alunoVO);
         
         if(!mensagemErros.isEmpty()){
@@ -33,24 +33,8 @@ public class AlunoNegocio {
             if(alunoDAO.incluir(alunoVO) == 0){
                throw new NegocioException("Inclusao nao realizada!"); 
             }
-        }catch(SQLException ex){
+        }catch(PersistenciaException ex){
             throw new NegocioException("Erro ao incluir o aluno "+ ex.getMessage());
-        }
-    }
-
-    public void inserir (AlunoVO alunoVO) throws NegocioException{
-
-        String mensagemErros = this.validarDados(alunVO);
-        if (!mensagemErros.isEmpty()){
-            throw new NegocioExceptio (mesagemErros);
-        }
-        try{
-            if(alunoDAO.incluir(alunoVO) == 0){
-                throw new NegocioException("Inclusao não realizada!!");
-            }
-            
-        }catch (PersistenciaException ex){
-            throw new NegocioException("Erro ao incluir o aluno - "+ ex.getMessage());
         }
     }
 

@@ -9,7 +9,7 @@ public class NegocioException extends Exception {
         super("Erro ocorrido  na camada de negocio");
     }
 
-    public negocio Exceptio(String msg){
+    public NegocioException (String msg){
         super(msg);
     }
 
