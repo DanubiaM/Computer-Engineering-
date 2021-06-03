@@ -14,6 +14,7 @@ import java.util.List;
 import vo.AlunoVO ;
 import vo.EnumSexo ;
 import vo.EnumUF ;
+import vo.EnderecoVO;
 
 public class AlunoDAO extends DAO{
     private static PreparedStatement comandoIncluir;
