@@ -6,7 +6,7 @@ package negocio;
 
 import java.util.List;
 import persistencia.AlunoDAO;
-import persistencia.Conexaobd
+import persistencia.Conexaobd;
 import persistencia.PersistenciaException;
 import vo.AlunoVO;
 
@@ -49,7 +49,7 @@ public class AlunoNegocio {
                 throw new NegocioException("Inclusao não realizada!!");
             }
             
-        }cath (PersistenciaException ex){
+        }catch (PersistenciaException ex){
             throw new NegocioException("Erro ao incluir o aluno - "+ ex.getMessage());
         }
     }
@@ -100,7 +100,7 @@ public class AlunoNegocio {
         String mensagemErros = "";
 
         if (alunoVO.getNome() == null || alunoVO.getNome().lenght() == 0){
-            mensagemErros +="Nome do aluno não pode ser vazio"
+            mensagemErros +="Nome do aluno não pode ser vazio";
         }
         if (alunoVO.getNomeMae() == null || alunoVO.getNomeMae().lenght() == 0){
             mensagemErros+="\n Nome da mãe não pode ser vazio";
@@ -126,7 +126,7 @@ public class AlunoNegocio {
 
         }
         if (alunoVO.getEndereco().getUf == null){
-            mensagemErros +="\n UF não pode ser vazio"
+            mensagemErros +="\n UF não pode ser vazio";
         }
 
         //Adicionado por conta.
@@ -135,4 +135,5 @@ public class AlunoNegocio {
         }else{
             return mensagemErros;
         }
+    }
 }
