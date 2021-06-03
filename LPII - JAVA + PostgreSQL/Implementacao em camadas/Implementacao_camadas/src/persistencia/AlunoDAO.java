@@ -22,7 +22,9 @@ public class AlunoDAO extends DAO{
 
     //construtor
     public AlunoDAO(Conexaobd conexao) throws PersistenciaException{
+
         super(conexao);
+
         try{
             comandoIncluir = conexao.getConexao().prepareStatement("INSERT INTO ALUNO (nome, nomemae, nomepai, sexo, "+
             "logradouro, numero, bairro, cidade, uf )VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -30,11 +32,12 @@ public class AlunoDAO extends DAO{
             comandoExcluir = conexao.getConexao().prepareStatement("DELETE FROM Aluno WHERE matricula = ?");
             comandoBuscar = conexao.getConexao().prepareStatement("SELECT * FROM Aluno WHERE matricula = ?");
         }catch(SQLException ex){
+
             throw new PersistenciaExpection("Erro ao incluir novo aluno - "+ex.getMessage());
         }
-
     }
-    public int incluir(AlunoVO alunoVO) throws PersistenciaException(){
+
+    public int incluir(AlunoVO alunoVO) throws PersistenciaException{
         int retorno = 0;
         try{
             comandoIncluir.setString(1, alunoVO.getNome());
@@ -52,8 +55,8 @@ public class AlunoDAO extends DAO{
             throw new PersistenciaException("Erro ao alterar o aluno "+ex.getMessage());
         }
         return retorno;
-
     }
+
     public int excluir(int matricula) throws PersistenciaException{
         int retorno = 0;
         try{
