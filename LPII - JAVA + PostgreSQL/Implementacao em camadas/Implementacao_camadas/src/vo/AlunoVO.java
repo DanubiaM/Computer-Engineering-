@@ -12,7 +12,7 @@ public class AlunoVO {
 
     //construtor
     public AlunoVO(){
-        this.endereco = New EnderecoVO();
+        this.endereco = new EnderecoVO();
         this.matricula = 0;
         this.nomeMae = "";
         this.nomePai = "";
