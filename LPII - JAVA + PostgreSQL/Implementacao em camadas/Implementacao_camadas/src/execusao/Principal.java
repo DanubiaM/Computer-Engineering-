@@ -120,7 +120,7 @@ public class Principal {
     //Procura aluno por parte do nome, caso nao possua valor de entrada, retorna os 10 primeiros ordenados pelo nome.
     private static void pesquisarPorNome() throws NegocioException{
         String nome = JOptionPane.showInputDialog(null, "Forneça o nome do aluno","Leitura de Dados", JOptionPane.QUESTION_MESSAGE);
-
+        
         if (nome != null){
             List<AlunoVO> listaAlunoVO = alunoNegocio.pesquisaParteNome(nome);
             
@@ -164,6 +164,7 @@ public class Principal {
         EnumUF uf;
         
         try{
+s
             nome = JOptionPane.showInputDialog("Forneca o nome do aluno ", alunoTemp.getNome().trim());
             alunoTemp.setNome(nome);
 
