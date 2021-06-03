@@ -5,6 +5,7 @@
 package vo;
 public class AlunoVO {
     private int matricula;
+    private String nome;
     private String nomeMae;
     private String nomePai;
     private EnumSexo sexo;
