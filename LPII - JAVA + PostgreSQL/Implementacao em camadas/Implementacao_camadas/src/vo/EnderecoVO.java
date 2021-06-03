@@ -30,7 +30,7 @@ public class EnderecoVO {
         this.numero = numero;
         this.bairro = bairro;
         this.cidade = cidade;
-        this.uf = uf
+        this.uf = uf;
     }
 
     public String getLogradouro(){
@@ -62,10 +62,10 @@ public class EnderecoVO {
         return uf;
     }
     public void setUf(EnumUF uf){
-        this.uf = uf
+        this.uf = uf;
     }
     @Override
     public String toString(){
-        return this.logragouro +", "+this.numero+", "+this.numero+", "+this.bairro+", "+this.cidade+" - "+this.uf;
+        return this.logradouro +", "+this.numero+", "+this.numero+", "+this.bairro+", "+this.cidade+" - "+this.uf;
     }
 }
