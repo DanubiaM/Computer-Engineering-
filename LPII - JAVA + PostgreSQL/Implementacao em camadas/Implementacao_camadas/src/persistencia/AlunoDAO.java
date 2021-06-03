@@ -50,6 +50,26 @@ public class AlunoDAO extends DAO{
             comandoIncluir.setString(7, alunoVO.getEndereco().getBairro());
             comandoIncluir.setString(8, alunoVO.getEndereco().getCidade());
             comandoIncluir.setString(9, alunoVO.getEndereco().getUf().name());
+            retorno = comandoIncluir.executeUpdate();
+
+        }catch(SQLException ex){
+            throw new PersistenciaException("Erro ao incluir o aluno "+ex.getMessage());
+        }
+        return retorno;
+    }
+
+    public int alterar(AlunoVO alunoVO) throws PersistenciaException{
+        int retorno = 0;
+        try{
+            comandoAlterar.setString(1, alunoVO.getNome());
+            comandoAlterar.setString(2, alunoVO.getNomeMae());
+            comandoAlterar.setString(3, alunoVO.getNomePai());
+            comandoAlterar.setInt(4, alunoVO.getSexo().ordinal());
+            comandoAlterar.setString(5, alunoVO.getEndereco().getLogradouro());
+            comandoAlterar.setInt(6, alunoVO.getEndereco().getNumero());
+            comandoAlterar.setString(7, alunoVO.getEndereco().getBairro());
+            comandoAlterar.setString(8, alunoVO.getEndereco().getCidade());
+            comandoAlterar.setString(9, alunoVO.getEndereco().getUf().name());
             retorno = comandoAlterar.executeUpdate();
 
         }catch(SQLException ex){
@@ -58,6 +78,7 @@ public class AlunoDAO extends DAO{
         return retorno;
     }
 
+ 
     public int excluir(int matricula) throws PersistenciaException{
         int retorno = 0;
         try{
