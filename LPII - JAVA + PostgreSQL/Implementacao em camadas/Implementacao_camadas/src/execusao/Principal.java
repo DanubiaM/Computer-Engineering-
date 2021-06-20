@@ -42,6 +42,7 @@ public class Principal {
                             break;
                         case PesqNome:
                             pesquisarPorNome();
+                            break;
                     }
                 }catch (NegocioException ex){
                     System.out.println("Operacao nao realizada corretamente - "+ex.getMessage());
@@ -62,15 +63,17 @@ public class Principal {
     private static void alterarAluno() throws NegocioException{
         int matricula = 0;
         try{
+
             matricula = Integer.parseInt(JOptionPane.showInputDialog(null, "Forneca a matricula do aluno","Leitura de Dados",
             JOptionPane.QUESTION_MESSAGE));
-        
+                  
+            
         }catch (Exception ex){
             JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
         }
 
         AlunoVO alunoVO = alunoNegocio.pesquisaMatricula(matricula);
-        if( alunoVO!=null){
+        if( alunoVO != null){
             AlunoVO  alunoTemp = lerDados(alunoVO);
             alunoNegocio.alterar(alunoTemp);
 
@@ -164,8 +167,9 @@ public class Principal {
         EnumUF uf;
         
         try{
-s
+            
             nome = JOptionPane.showInputDialog("Forneca o nome do aluno ", alunoTemp.getNome().trim());
+
             alunoTemp.setNome(nome);
 
             nomeMae = JOptionPane.showInputDialog("Forneca o nome da mae do aluno ", alunoTemp.getNomeMae().trim());
@@ -191,8 +195,7 @@ s
              cidade = JOptionPane.showInputDialog("Forneca a cidade no endereco ", alunoTemp.getEndereco().getCidade().trim());
              alunoTemp.getEndereco().setCidade(cidade);
 
-             uf = (EnumUF) JOptionPane.showInputDialog(null, " Escolha uma opcao", "Leitura de Dados",
-             JOptionPane.QUESTION_MESSAGE, null, EnumUF.values(), alunoTemp.getEndereco().getUf());
+             uf = (EnumUF) JOptionPane.showInputDialog(null, " Escolha uma opcao", "Leitura de Dados", JOptionPane.QUESTION_MESSAGE, null, EnumUF.values(), alunoTemp.getEndereco().getUf());
              alunoTemp.getEndereco().setUf(uf);
         }catch (Exception ex){
             System.out.println("Digitacao inconsistente - " +ex.getMessage());
