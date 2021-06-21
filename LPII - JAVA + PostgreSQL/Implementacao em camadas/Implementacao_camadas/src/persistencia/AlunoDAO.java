@@ -79,7 +79,7 @@ public class AlunoDAO extends DAO{
             comandoExcluir.setInt (1 ,matricula);
             retorno = comandoExcluir.executeUpdate();
         } catch( SQLException ex){
-            throw new PersistenciaException(" Erro ao excluiroaluno − " + ex.getMessage ());
+            throw new PersistenciaException(" Erro ao excluiro aluno − " + ex.getMessage ());
 
         }
         return retorno;
@@ -116,7 +116,7 @@ public class AlunoDAO extends DAO{
             }
             comando.close();
         }catch( Exception ex){
-            throw new PersistenciaException( "Erro na selecao o por nome − " + ex.getMessage());
+            throw new PersistenciaException( "Erro na selecao por nome − " + ex.getMessage());
         }
         return listaAluno;
     }
@@ -126,7 +126,7 @@ public class AlunoDAO extends DAO{
         if( rs != null){
             try{
 
-                //System.out.println(EnumUF.valueOf(rs.getString("uf")));
+                
 
                 alu.setMatricula(rs.getInt("matricula"));
                 alu.setNome(rs.getString("Nome").trim());
@@ -140,7 +140,7 @@ public class AlunoDAO extends DAO{
                 //alu.getEndereco().setUf(EnumUF.valueOf(rs.getString("uf")));
                 alu.getEndereco().setUf(EnumUF.valueOf(rs.getString("uf").trim()));
             }catch(Exception ex){
-                throw new PersistenciaException(" Erro ao acessaros dados do resultado");
+                throw new PersistenciaException(" Erro ao acessar os dados do resultado");
             }
         }
         return alu;
