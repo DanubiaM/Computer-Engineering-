@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import vo.CursoVO;
 /**
  * Implementacao de Inclusao, alteração, exclusao, busca por Codigo e busca por nome. 
  * Busca por Nome deve retornar uma lista.
@@ -33,7 +34,7 @@ public class CursoDAO extends DAO{
         int retorno = 0;
 
         try{
-            comandoIncluir.setString(1, cursoVO.getCurso());
+            comandoIncluir.setString(1, cursoVO.getNome());
             comandoIncluir.setString(2, cursoVO.getDescricao());
             retorno = comandoIncluir.executeUpdate();
         }catch (SQLException ex){
@@ -49,7 +50,7 @@ public class CursoDAO extends DAO{
         int retorno  = 0;
 
         try{
-            comandoAlterar.setString(1, cursoVO.getCurso());
+            comandoAlterar.setString(1, cursoVO.getNome());
             comandoAlterar.setString(2, cursoVO.getDescricao());
             retorno  = comandoAlterar.executeUpdate();
         }catch (SQLException ex){
@@ -87,4 +88,40 @@ public class CursoDAO extends DAO{
         }
         return curso;
     }
+
+    public List <CursoVO> buscaPorCurso (String nome) throws PersistenciaException{
+        List <CursoVO> listaCurso = new ArrayList<CursoVO>();
+
+        CursoVO curso = null;
+        String comandoSQL = "SELECT * FROM Curso WHERE UPPER(nome) LIKE '"+nome.trim().toUpperCase()+"%' ORDER BT NOME LIMIT 10";
+        try{
+            PreparedStatement comando = conexao.getConexao().prepareStatement(comandoSQL);
+            ResultSet rs = comando.executeQuery();
+            while (rs.next()){
+                curso = this.montaCursoVO(rs);
+                listaCurso.add(curso);
+            }
+            comando.close();
+        }catch(Exception ex){
+            throw new PersistenciaException("Erro na selecao por nome -"+ex.getMessage());
+        }
+        return listaCurso;
+    }
+
+    private CursoVO montaCursoVO(ResultSet rs) throws PersistenciaException{
+        CursoVO curso = new CursoVO();
+
+        if (rs != null){
+            try{
+               curso.setCodigo(rs.getInt("codigo"));
+               curso.setNome(rs.getString("nome").trim());
+               curso.setDescricao(rs.getString("descricao").trim());
+            }catch (Exception ex){
+                throw new PersistenciaException("Erro ao acessar dados do resultado");
+            }
+        }
+        return curso;
+    }            
+
+           
 }
