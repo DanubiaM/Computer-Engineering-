@@ -33,7 +33,7 @@ public class MenuAluno {
     //Método para chamar o menu Aluno
     public void iniciaMenuAluno(){
         if (alunoNegocio != null){
-            EnumMenu opcao = EnumMenu.Sair;
+            EnumMenuAluno opcao = EnumMenuAluno.Sair;
         
             do {
                 try{
@@ -59,7 +59,7 @@ public class MenuAluno {
                     System.out.println("Operacao nao realizada corretamente - "+ex.getMessage());
                 }
 
-            }while (opcao != EnumMenu.Sair);
+            }while (opcao != EnumMenuAluno.Sair);
             
         }
     }

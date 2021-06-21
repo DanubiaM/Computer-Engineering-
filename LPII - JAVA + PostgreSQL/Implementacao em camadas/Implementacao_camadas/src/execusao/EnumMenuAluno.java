@@ -1,7 +1,7 @@
 
 package execusao;
 
-public enum EnumMenu {
+public enum EnumMenuAluno {
     IncluirAluno,
     AlterarAluno,
     ExcluirAluno,
