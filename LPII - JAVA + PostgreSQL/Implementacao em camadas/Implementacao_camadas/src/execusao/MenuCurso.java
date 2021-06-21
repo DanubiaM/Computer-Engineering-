@@ -65,6 +65,27 @@ public class MenuCurso {
         cursoNegocio.inserir(cursoVO);
     }
 
+    private void alterarCurso(){
+        
+        int codigo;
+
+       
+        try{
+            
+            codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo do curso ", JOptionPane.QUESTION_MESSAGE));
+
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
+        }
+        CursoVO cursoVO = cursoNegocio.pesquisaCodigo(codigo);
+        if (cursoVO != null){
+            CursoVO cursoTemp = lerDados(cursoVO)
+            cursoNegocio.alterar(cursoTemp);
+        }else{
+            JOptionPane.showMessageDialog(null, "Curso não localizado");
+
+        }   
+    }
 
     /* Criando Métodos Auxiliares de leitra e impressao de dados*/
 
