@@ -6,6 +6,6 @@ public enum EnumMenu {
     AlterarAluno,
     ExcluirAluno,
     PesqMatricula,
-    PesqNome,
+    PesqNome,  
     Sair
 }
