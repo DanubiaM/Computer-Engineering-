@@ -60,7 +60,9 @@ public class MenuCurso {
     }
     
     private void incluirCurso(){
-        
+        CursoVO cursoVO = lerDados();
+     
+        cursoNegocio.inserir(cursoVO);
     }
 
 
