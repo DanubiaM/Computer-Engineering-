@@ -41,12 +41,17 @@ public class CursoNegocio {
         }
     }
     public void alterar(CursoVO cursoVO) throws NegocioException{
+        
         String mensagemErros = this.validarDados(cursoVO);
+        
         if(!mensagemErros.isEmpty()){
+      
             throw new NegocioException(mensagemErros);
         }
         try{
+            
             if(cursoDAO.alterar(cursoVO)== 0){
+                  
                 throw new NegocioException("Alteracao nao realizada!!");
             }
         }catch(PersistenciaException ex){

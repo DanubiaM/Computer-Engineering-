@@ -52,7 +52,11 @@ public class CursoDAO extends DAO{
         try{
             comandoAlterar.setString(1, cursoVO.getNome());
             comandoAlterar.setString(2, cursoVO.getDescricao());
+            comandoAlterar.setInt(3, cursoVO.getCodigo());
+           
+            System.out.println("Entrou aqui 3");
             retorno  = comandoAlterar.executeUpdate();
+            System.out.println("Entrou aqui 4");
         }catch (SQLException ex){
             throw new PersistenciaException("Erro ao alterar curso - "+ex.getMessage());
 
