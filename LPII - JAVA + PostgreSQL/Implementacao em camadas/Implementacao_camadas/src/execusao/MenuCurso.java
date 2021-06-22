@@ -8,6 +8,7 @@ import javax.swing.JOptionPane ;
 import negocio.AlunoNegocio;
 import negocio.NegocioException ;
 import vo.CursoVO;
+import negocio.CursoNegocio;
 /**
  *
  * @author danub
@@ -18,7 +19,7 @@ public class MenuCurso {
     public void iniciaCamada(){
        int retorno =0;
        try{
-            cursoNegocio = New CursoNegocio();
+            cursoNegocio = new CursoNegocio();
             retorno =1;
         }catch(NegocioException ex){
             System.out.println("Camada de negocio e presistencia não iniciada - " +ex.getMessage());
@@ -79,7 +80,7 @@ public class MenuCurso {
         }
         CursoVO cursoVO = cursoNegocio.pesquisaCodigo(codigo);
         if (cursoVO != null){
-            CursoVO cursoTemp = lerDados(cursoVO)
+            CursoVO cursoTemp = lerDados(cursoVO);
             cursoNegocio.alterar(cursoTemp);
         }else{
             JOptionPane.showMessageDialog(null, "Curso não localizado");
