@@ -102,12 +102,26 @@ public class MenuCurso {
         }else{
             JOptionPane.showMessageDialog(null, "Curso não localizado");
         }
-
-
+    }
+    private void pesquisarPorCodigo(){        
+        int codigo;
+        try{
+            codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo do curso", JOptionPane.QUESTION_MESSAGE));
+        
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
+        }
+        CursoVO cursoTemp = cursoNegocio.pesquisaCodigo(codigo);
+        if (cursoTemp != null ){
+            mostrarDados(cursoTemp);
+        }else{
+            JOptionPane.showMessageDialog(null, "Curso não localizado");
+        }
+    }
 
     
 
-    }
+    
 
 
     /* Criando Métodos Auxiliares de leitra e impressao de dados*/
@@ -134,7 +148,7 @@ public class MenuCurso {
     }
 
     //Impressao de Dados
-    public void MostrarDados(CursoVO cursoVO){
+    public void mostrarDados(CursoVO cursoVO){
         if(cursoVO != null){
             System.out.println("Código................:", cursoVO.getCodigo());
             System.out.println("Nome do curso.........:", cursoVo.getNome());
