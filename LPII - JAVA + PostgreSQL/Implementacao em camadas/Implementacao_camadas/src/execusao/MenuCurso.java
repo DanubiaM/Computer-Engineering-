@@ -175,4 +175,16 @@ public class MenuCurso {
 
         }
     }
+     private static EnumMenuCurso exibirMenu(){
+        EnumMenuCurso opcao;
+        
+        opcao = (EnumMenuCurso) JOptionPane.showInputDialog(null, "Escolha uma opcao", "Menu", JOptionPane.QUESTION_MESSAGE, null, EnumMenuCurso.values(),
+        EnumMenuCurso.values()[0]);
+        
+        if (opcao == null){
+            JOptionPane.showMessageDialog(null, "Nenhuma opcao escolhida");
+            opcao = EnumMenuCurso.Sair;
+        }
+        return opcao;
+    }
 }
