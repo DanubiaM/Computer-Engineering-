@@ -10,7 +10,7 @@ package execusao;
  *
  * @author danub
  */
-public class EnumMenuCurso {
+public enum EnumMenuCurso {
     IncluirCurso,
     AlterarCurso,
     ExcluirCurso,
