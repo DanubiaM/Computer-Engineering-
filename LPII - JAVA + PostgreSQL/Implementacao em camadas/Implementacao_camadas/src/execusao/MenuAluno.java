@@ -220,14 +220,14 @@ public class MenuAluno {
     }
 
     private static EnumMenu exibirMenu(){
-        EnumMenu opcao;
+        EnumMenuAluno opcao;
         
-        opcao = (EnumMenu) JOptionPane.showInputDialog(null, "Escolha uma opcao", "Menu", JOptionPane.QUESTION_MESSAGE, null, EnumMenu.values(),
-        EnumMenu.values()[0]);
+        opcao = (EnumMenuAluno) JOptionPane.showInputDialog(null, "Escolha uma opcao", "Menu", JOptionPane.QUESTION_MESSAGE, null, EnumMenuAluno.values(),
+        EnumMenuAluno.values()[0]);
         
         if (opcao == null){
             JOptionPane.showMessageDialog(null, "Nenhuma opcao escolhida");
-            opcao = EnumMenu.Sair;
+            opcao = EnumMenuAluno.Sair;
         }
         return opcao;
     }   
