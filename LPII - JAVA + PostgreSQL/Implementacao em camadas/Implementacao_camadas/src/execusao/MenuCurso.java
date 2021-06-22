@@ -70,7 +70,7 @@ public class MenuCurso {
         int codigo = 0;       
         try{
             
-            codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo do curso ", JOptionPane.QUESTION_MESSAGE));
+            codigo = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o codigo do curso ", "Leitura de Dados",JOptionPane.QUESTION_MESSAGE));
 
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
@@ -104,7 +104,7 @@ public class MenuCurso {
     private void pesquisarPorCodigo() throws NegocioException{        
         int codigo = 0;
         try{
-            codigo = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o codigo do curso", JOptionPane.QUESTION_MESSAGE));
+            codigo = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o codigo do curso", "Leitura de Dados",JOptionPane.QUESTION_MESSAGE));
         
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
