@@ -219,7 +219,7 @@ public class MenuAluno {
         return lerDados(alunoTemp);
     }
 
-    private static EnumMenu exibirMenu(){
+    private static EnumMenuAluno exibirMenu(){
         EnumMenuAluno opcao;
         
         opcao = (EnumMenuAluno) JOptionPane.showInputDialog(null, "Escolha uma opcao", "Menu", JOptionPane.QUESTION_MESSAGE, null, EnumMenuAluno.values(),

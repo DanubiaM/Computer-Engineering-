@@ -1,22 +1,21 @@
-/*
- * 
- */
 
 package execusao;
 import java.util.List;
 import javax.swing.JOptionPane ;
-import negocio.AlunoNegocio;
-import negocio.NegocioException ;
-import vo.CursoVO;
+
 import negocio.CursoNegocio;
+import negocio.NegocioException ;
+
+import vo.CursoVO;
+
 /**
  *
  * @author danub
  */
 public class MenuCurso {
-    private CursoNegocio  cursoNegocio;
+    private static CursoNegocio  cursoNegocio;
 
-    public void iniciaCamada(){
+    public static int iniciaCamada(){
        int retorno =0;
        try{
             cursoNegocio = new CursoNegocio();
@@ -24,7 +23,7 @@ public class MenuCurso {
         }catch(NegocioException ex){
             System.out.println("Camada de negocio e presistencia não iniciada - " +ex.getMessage());
         }
-
+        return retorno;
     }
 
     public void iniciaMenuCurso(){
@@ -60,17 +59,15 @@ public class MenuCurso {
         }        
     }
     
-    private void incluirCurso(){
+    private void incluirCurso() throws NegocioException{
         CursoVO cursoVO = lerDados();
      
         cursoNegocio.inserir(cursoVO);
     }
 
-    private void alterarCurso(){
+    private void alterarCurso() throws NegocioException{
         
-        int codigo;
-
-       
+        int codigo = 0;       
         try{
             
             codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo do curso ", JOptionPane.QUESTION_MESSAGE));
@@ -88,26 +85,26 @@ public class MenuCurso {
         }   
     }
 
-    private int excluirCurso(){
-        int codigo;
+    private void excluirCurso() throws NegocioException{
+        int codigo = 0;
         try{
-            codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo do curso", JOptionPane.QUESTION_MESSAGE));
-        
+            codigo= Integer.parseInt(JOptionPane.showInputDialog(null, "Forneca o codigo do curso", "Leitura de Dados",
+            JOptionPane.QUESTION_MESSAGE));
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
         }
-        CursoVO cursoTemp = pesquisaCodigo(codigo);
+        CursoVO cursoTemp = cursoNegocio.pesquisaCodigo(codigo);
 
         if (cursoTemp != null){
-            cusoNegocio.excluir(cursoTemp.getMatricula());
+            cursoNegocio.excluir(cursoTemp.getCodigo());
         }else{
             JOptionPane.showMessageDialog(null, "Curso não localizado");
         }
     }
-    private void pesquisarPorCodigo(){        
-        int codigo;
+    private void pesquisarPorCodigo() throws NegocioException{        
+        int codigo = 0;
         try{
-            codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo do curso", JOptionPane.QUESTION_MESSAGE));
+            codigo = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o codigo do curso", JOptionPane.QUESTION_MESSAGE));
         
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
@@ -120,22 +117,21 @@ public class MenuCurso {
         }
     }
 
-    private void pesquisarPorNome(){
-        String nome ;
+    private void pesquisarPorNome() throws NegocioException{  
 
-        try{
-            nome = JOptionPane.showInputDialog("Digite o nome do curso","Leitura de Dados", JOptionPane.QUESTION_MESSAGE);
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
-        }
+        String nome = JOptionPane.showInputDialog(null,"Digite o nome do curso","Leitura de Dados", JOptionPane.QUESTION_MESSAGE);
+        if (nome != null){
 
-        List <CursoVO> listaCurso = pesqiosaParteNome(nome);
-        if(listaCurso.size() > 0){
-            for(CursoVO cursoVO : listaCurso){
-                mostrarDados(cursoVO);
+            List <CursoVO> listaCurso = cursoNegocio.pesquisaParteNome(nome);
+            if(listaCurso.size() > 0){
+                for(CursoVO cursoVO : listaCurso){
+                    mostrarDados(cursoVO);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Curso não localizado");
             }
         }else{
-            JOptionPane.showMessageDialog(null, "Curso não localizado");
+           JOptionPane.showMessageDialog(null, "Nome nao pode ser nulo");
         }
     }  
 
@@ -168,9 +164,9 @@ public class MenuCurso {
     //Impressao de Dados
     public void mostrarDados(CursoVO cursoVO){
         if(cursoVO != null){
-            System.out.println("Código................:", cursoVO.getCodigo());
-            System.out.println("Nome do curso.........:", cursoVo.getNome());
-            System.out.println("Descricao.............:", cursoVO.getDescricao());
+            System.out.println("Código................:"+ cursoVO.getCodigo());
+            System.out.println("Nome do curso.........:"+ cursoVO.getNome());
+            System.out.println("Descricao.............:"+ cursoVO.getDescricao());
             System.out.println("-------------------------------------------------");
 
         }
