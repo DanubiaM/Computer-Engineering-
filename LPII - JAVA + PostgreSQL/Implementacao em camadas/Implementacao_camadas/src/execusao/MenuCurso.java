@@ -119,7 +119,24 @@ public class MenuCurso {
         }
     }
 
-    
+    private void pesquisarPorNome(){
+        String nome ;
+
+        try{
+            nome = JOptionPane.showInputDialog("Digite o nome do curso","Leitura de Dados", JOptionPane.QUESTION_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
+        }
+
+        List <CursoVO> listaCurso = pesqiosaParteNome(nome);
+        if(listaCurso.size() > 0){
+            for(CursoVO cursoVO : listaCurso){
+                mostrarDados(cursoVO);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Curso não localizado");
+        }
+    }  
 
     
 
