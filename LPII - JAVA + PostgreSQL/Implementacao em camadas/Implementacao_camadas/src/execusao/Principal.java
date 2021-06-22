@@ -12,10 +12,10 @@ import vo.EnumUF;
 
 public class Principal {
     private static MenuAluno alunoMenu = new MenuAluno();
-
+    private static MenuCurso cursoMenu = new MenuCurso();
     public static void main(String[] args){       
         
-        if (alunoMenu.iniciaCamada() != 0){
+        if (alunoMenu.iniciaCamada() != 0 & cursoMenu.iniciaCamada() != 0){
             EnumMenuPrincipal opcao = EnumMenuPrincipal.Sair;
         
             do {
@@ -26,7 +26,7 @@ public class Principal {
                             alunoMenu.iniciaMenuAluno();
                             break;
                         case Curso:
-                            //alterarAluno();
+                            cursoMenu.iniciaMenuCurso();
                             break;
                         case Disciplina:
                             //excluirAluno();
