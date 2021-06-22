@@ -52,11 +52,9 @@ public class CursoDAO extends DAO{
         try{
             comandoAlterar.setString(1, cursoVO.getNome());
             comandoAlterar.setString(2, cursoVO.getDescricao());
-            comandoAlterar.setInt(3, cursoVO.getCodigo());
-           
-            System.out.println("Entrou aqui 3");
-            retorno  = comandoAlterar.executeUpdate();
-            System.out.println("Entrou aqui 4");
+            comandoAlterar.setInt(3, cursoVO.getCodigo());         
+            
+            retorno  = comandoAlterar.executeUpdate();            
         }catch (SQLException ex){
             throw new PersistenciaException("Erro ao alterar curso - "+ex.getMessage());
 
@@ -97,7 +95,7 @@ public class CursoDAO extends DAO{
         List <CursoVO> listaCurso = new ArrayList<CursoVO>();
 
         CursoVO curso = null;
-        String comandoSQL = "SELECT * FROM Curso WHERE UPPER(nome) LIKE '"+nome.trim().toUpperCase()+"%' ORDER BT NOME LIMIT 10";
+        String comandoSQL = "SELECT * FROM Curso WHERE UPPER(nome) LIKE '"+nome.trim().toUpperCase()+"%' ORDER BY NOME LIMIT 10";
         try{
             PreparedStatement comando = conexao.getConexao().prepareStatement(comandoSQL);
             ResultSet rs = comando.executeQuery();
