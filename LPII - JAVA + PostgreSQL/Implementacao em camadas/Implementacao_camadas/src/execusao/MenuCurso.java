@@ -87,6 +87,29 @@ public class MenuCurso {
         }   
     }
 
+    private int excluirCurso(){
+        int codigo;
+        try{
+            codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo do curso", JOptionPane.QUESTION_MESSAGE));
+        
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Digitacao inconsistente - "+ex.getMessage());
+        }
+        CursoVO cursoTemp = pesquisaCodigo(codigo);
+
+        if (cursoTemp != null){
+            cusoNegocio.excluir(cursoTemp.getMatricula());
+        }else{
+            JOptionPane.showMessageDialog(null, "Curso não localizado");
+        }
+
+
+
+    
+
+    }
+
+
     /* Criando Métodos Auxiliares de leitra e impressao de dados*/
 
     //leitura de dados
