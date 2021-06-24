@@ -43,11 +43,8 @@ public class DisciplinaDAO extends DAO{
             retorno = comandoIncluir.executeUpdate();
         }catch(SQLException ex){
             throw new PersistenciaException(" Erro ao incluir aluno − " + ex.getMessage());
-        }
-
-    
-    
-
+        }       
+        return retorno;
     }
 
 
