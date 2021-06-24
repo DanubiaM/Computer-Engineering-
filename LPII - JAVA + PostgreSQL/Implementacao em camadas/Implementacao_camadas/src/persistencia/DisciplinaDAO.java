@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import vo.DisciplinaVO;
 /**
  *
@@ -69,10 +71,45 @@ public class DisciplinaDAO extends DAO{
             comandoExcluir.setInt(1, codigo);
             retorno = comandoExcluir.executeUpdate();
         }catch (SQLException ex){
-            throw new PersistenciaException("Erro ao excluir curso - "+ex.getMessage());
+            throw new PersistenciaException("Erro ao excluir disciplina - "+ex.getMessage());
         }
     
         return retorno;
+    }
+
+    public DisciplinaVO buscarPorCodigo (int codigo) throws PersistenciaException{
+        DisciplinaVO disciplina = null;
+
+        try{
+            comandoBuscaCodigo.setInt(1, codigo);
+            ResultSet rs = comandoBuscaCodigo.executeQuery();
+            if(rs.next()){
+                disciplina = this.montaDisciplinaVO(rs);
+            }
+
+        }catch (Exception ex){
+            throw new PersistenciaException ("Erro na seleção por codigo - "+ex.getMessage());
+        }
+        return disciplina;
+    }
+
+    public List <DisciplinaVO> buscaPorDisciplina (String nome) throws PersistenciaException{
+        List <DisciplinaVO> listaDisciplina = new ArrayList<DisciplinaVO>();
+
+        CursoVO disciplina = null;
+        String comandoSQL = "SELECT * FROM Disciplina WHERE UPPER(nome) LIKE '"+nome.trim().toUpperCase()+"%' ORDER BY NOME LIMIT 10";
+        try{
+            PreparedStatement comando = conexao.getConexao().prepareStatement(comandoSQL);
+            ResultSet rs = comando.executeQuery();
+            while (rs.next()){
+                disciplina = this.montaDisciplinaVO(rs);
+                listaDisciplina.add(disciplina);
+            }
+            comando.close();
+        }catch(Exception ex){
+            throw new PersistenciaException("Erro na selecao por nome -"+ex.getMessage());
+        }
+        return listaDisciplina;
     }
 
     public DisciplinaVO montaDisciplina (ResultSet rs) throws PersistenciaException{
