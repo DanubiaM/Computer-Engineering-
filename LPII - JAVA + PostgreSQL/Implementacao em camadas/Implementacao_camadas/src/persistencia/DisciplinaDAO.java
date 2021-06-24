@@ -47,6 +47,28 @@ public class DisciplinaDAO extends DAO{
     }
 
 
+
+    public DisciplinaVO montaDisciplina (ResultSet rs) throws PersistenciaException{
+        DisciplinaVO discTemp= new DisciplinaVO();
+        //Map <String, Integer>  grupoCurso = obterGrupoCurso();
+        if(rs != null){
+            try{
+                discTemp.setCodigo(rs.getInt("codigo"));
+                discTemp.setNome(rs.getString("nome").trim());
+                discTemp.setSemestre(rs.getInt("semestre"));
+                discTemp.setCargaHoraria(rs.getInt("cargahoraria"));
+                //discTemp.setCurso(rs.getInt("curso"));
+                
+            }catch(Exception ex){
+                 throw new PersistenciaException("Erro ao acessar dados do resultado");
+
+            }
+            return discTemp;
+        }
+    
+
+    }
+   
     public Map<String, Integer> obterGrupoCurso(){
         Map <String, Integer> listaGrupos = new HashMap();
         PreparedStatement comandoGrupoCurso = null;
