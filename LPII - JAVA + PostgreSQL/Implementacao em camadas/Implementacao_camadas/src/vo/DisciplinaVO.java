@@ -29,34 +29,34 @@ public class DisciplinaVO {
         this.curso = curso;
     }
 
-    private int getCodigo(){
+    public int getCodigo(){
         return this.codigo;
     }
-    private void setCodigo(int codigo){
+    public void setCodigo(int codigo){
         this.codigo = codigo;
     }
-    private String getNome(){
+    public String getNome(){
         return this.nome;
     }
-    private void setNome(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
-    private int getSemestre(){
+    public int getSemestre(){
         return this.semestre;
     }
-    private void setSemestre(int semestre){
+    public void setSemestre(int semestre){
         this.semestre = semestre;
     }
-    private int getCargaHoraria(){
+    public int getCargaHoraria(){
         return this.cargahoraria;
     }
-    private void setCargaHoraria(int cargahoraria){
+    public void setCargaHoraria(int cargahoraria){
         this.cargahoraria = cargahoraria;
     }
-    private String getCurso(){
+    public String getCurso(){
         return this.curso;
     }
-    private void setCurso(String curso){
+    public void setCurso(String curso){
         this.curso = curso;
     }
     @Override
