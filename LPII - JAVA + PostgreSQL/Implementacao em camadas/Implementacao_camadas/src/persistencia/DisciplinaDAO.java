@@ -46,6 +46,21 @@ public class DisciplinaDAO extends DAO{
         return retorno;
     }
 
+    public int alterar(DisciplinaVO disciplina) throws PersistenciaException{
+       int retorno = 0;
+       Map <String, Integer> listaGrupos = obterGrupoCurso();
+       try{
+            comandoAlterar.setString(1, disciplina.getNome());
+            comandoAlterar.setInt(2, disciplina.getSemestre());
+            comandoAlterar.setInt(3, disciplina.getCargaHoraria());
+            comandoAlterar.setInt(4, listaGrupos.get(disciplina.getCurso()));
+            
+            retorno = comandoAlterar.executeUpdate();
+        }catch (SQLException ex){
+            throw new PersistenciaException("Erro ao alterar curso - "+ex.getMessage());
+        }
+        return retorno;
+    }
 
 
     public DisciplinaVO montaDisciplina (ResultSet rs) throws PersistenciaException{
@@ -63,10 +78,9 @@ public class DisciplinaDAO extends DAO{
                  throw new PersistenciaException("Erro ao acessar dados do resultado");
 
             }
-            return discTemp;
+            
         }
-    
-
+        return discTemp;
     }
    
     public Map<String, Integer> obterGrupoCurso(){
