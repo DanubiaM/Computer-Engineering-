@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-
+import vo.DisciplinaVO;
 /**
  *
  * @author danub
@@ -32,8 +32,26 @@ public class DisciplinaDAO extends DAO{
         }
 
     }
+    public int incluir(DisciplinaVO disciplina) throws PersistenciaException{
+        int retorno =0;
+        Map <String, Integer> listaGrupos = obterGrupoCurso();
+        try{
+            comandoIncluir.setString(1, disciplina.getNome());
+            comandoIncluir.setInt(2, disciplina.getSemestre());
+            comandoIncluir.setInt(3, disciplina.getCargaHoraria());
+            comandoIncluir.setInt(4, listaGrupos.get(disciplina.getCurso()));
+            retorno = comandoIncluir.executeUpdate();
+        }catch(SQLException ex){
+            throw new PersistenciaException(" Erro ao incluir aluno − " + ex.getMessage());
+        }
 
-    public static Map<String, Integer> obterGrupoCurso(){
+    
+    
+
+    }
+
+
+    public Map<String, Integer> obterGrupoCurso(){
         Map <String, Integer> listaGrupos = new HashMap();
        
         try{
