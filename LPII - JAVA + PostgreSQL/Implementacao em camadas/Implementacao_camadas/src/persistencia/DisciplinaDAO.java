@@ -62,6 +62,18 @@ public class DisciplinaDAO extends DAO{
         return retorno;
     }
 
+     public int excluir( int codigo) throws PersistenciaException{
+        int retorno = 0;
+    
+        try{
+            comandoExcluir.setInt(1, codigo);
+            retorno = comandoExcluir.executeUpdate();
+        }catch (SQLException ex){
+            throw new PersistenciaException("Erro ao excluir curso - "+ex.getMessage());
+        }
+    
+        return retorno;
+    }
 
     public DisciplinaVO montaDisciplina (ResultSet rs) throws PersistenciaException{
         DisciplinaVO discTemp= new DisciplinaVO();
