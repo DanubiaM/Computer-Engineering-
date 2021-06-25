@@ -31,4 +31,23 @@ public class DisciplinaNegocio {
             throw new NegocioException("CursoNegocio: Erro ao incluir o curso -"+ ex.getMessage());
         }
     }
+
+    //metodo auxiliar
+    public String validarDados(DisciplinaVO disciplina){
+        String mensagemErros = "";
+        if(disciplina.getNome() == null || disciplina.getNome().length() == 0){
+            mensagemErros += "Nome da disciplina nao pode ser vazio";
+        }
+        if (disciplina.getSemestre() == null || disciplina.getSemestre() == 0){
+            mensagemErros += "Semestre da disciplina nao pode ser vazio";
+        }
+        if (disciplina.getCargaHoraria() == null || disciplina.getCargaHoraria() == 0){
+            mensagemErros += "Carga horaria da disciplina nao pode ser vazio";
+        }
+        if(disciplina.getCurso() == null || disciplina.getCurso().length() == 0){
+            mensagemErros += "Nome do curso nao pode ser vazio";
+        }
+        return mensagemErros;
+
+    }
 }
