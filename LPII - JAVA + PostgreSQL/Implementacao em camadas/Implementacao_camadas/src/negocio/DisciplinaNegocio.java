@@ -16,4 +16,19 @@ public class DisciplinaNegocio {
         }
     }
     
+    public void inserir(DisciplinaVO disciplina) throws NegocioException(){
+        String mensagemErros = this.validarDados(disciplina);
+
+        if(!mensagemErros.isEmpty()){
+            throw new NegocioException(mensagemErros);
+        }
+        try{
+            if(disciplinaDAO.incluir(disciplina) == 0){
+                throw new NegocioException("Inclusao não realizada!!");
+            }
+       
+        }catch (PersistenciaException ex){
+            throw new NegocioException("CursoNegocio: Erro ao incluir o curso -"+ ex.getMessage());
+        }
+    }
 }
