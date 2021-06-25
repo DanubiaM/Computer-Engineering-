@@ -1,6 +1,10 @@
 
 package negocio;
-
+import java.util.List;
+import persistencia.DisciplinaDAO;
+import persistencia.Conexaobd;
+import persistencia.PersistenciaException;
+import vo.DisciplinaVO;
 /**
  *
  * @author danub
@@ -10,13 +14,13 @@ public class DisciplinaNegocio {
 
     public DisciplinaNegocio() throws NegocioException{
         try{
-            this.DisciplinaDAO = new DisciplinaDAO(Conexaobd.getInstancia());
+            this.disciplinaDAO = new DisciplinaDAO(Conexaobd.getInstancia());
         }catch(PersistenciaException ex){
             throw new NegocioException("Erro ao iniciar a Persistencia - " + ex.getMessage());
         }
     }
     
-    public void inserir(DisciplinaVO disciplina) throws NegocioException(){
+    public void inserir(DisciplinaVO disciplina) throws NegocioException{
         String mensagemErros = this.validarDados(disciplina);
 
         if(!mensagemErros.isEmpty()){
@@ -38,11 +42,11 @@ public class DisciplinaNegocio {
         if(disciplina.getNome() == null || disciplina.getNome().length() == 0){
             mensagemErros += "Nome da disciplina nao pode ser vazio";
         }
-        if (disciplina.getSemestre() == null || disciplina.getSemestre() == 0){
-            mensagemErros += "Semestre da disciplina nao pode ser vazio";
+        if (disciplina.getSemestre() <=0 ){
+            mensagemErros += "Semestre da disciplina nao pode ser vazia ou menor que zero";
         }
-        if (disciplina.getCargaHoraria() == null || disciplina.getCargaHoraria() == 0){
-            mensagemErros += "Carga horaria da disciplina nao pode ser vazio";
+        if (disciplina.getCargaHoraria() <= 0){
+            mensagemErros += "Carga horaria da disciplina nao pode ser vazio ou menor que zero";
         }
         if(disciplina.getCurso() == null || disciplina.getCurso().length() == 0){
             mensagemErros += "Nome do curso nao pode ser vazio";
