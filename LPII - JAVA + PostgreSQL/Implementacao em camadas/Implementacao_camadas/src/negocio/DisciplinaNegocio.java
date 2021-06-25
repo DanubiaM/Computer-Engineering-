@@ -35,6 +35,24 @@ public class DisciplinaNegocio {
             throw new NegocioException("CursoNegocio: Erro ao incluir o curso -"+ ex.getMessage());
         }
     }
+    public void alterar (DisciplinaVO disciplina)throws NegocioException{
+    String mensagemErros = this.validarDados(disciplina);
+        
+        if(!mensagemErros.isEmpty()){
+      
+            throw new NegocioException(mensagemErros);
+        }
+        try{
+            
+            if(disciplinaDAO.alterar(disciplina)== 0){
+                  
+                throw new NegocioException("Alteracao nao realizada!!");
+            }
+        }catch(PersistenciaException ex){
+            throw new NegocioException("Erro ao alterar o disciplina - "+ex.getMessage());
+        }
+
+    }
 
     //metodo auxiliar
     public String validarDados(DisciplinaVO disciplina){
