@@ -53,6 +53,33 @@ public class DisciplinaNegocio {
         }
 
     }
+    public void excluir(int codigo) throws NegocioException{
+        try{
+            if(disciplinaDAO.excluir(codigo) == 0 ){
+                throw new NegocioException("Exclusao nao realizada !!");
+            }
+        }catch (PersistenciaException ex){
+            throw new NegocioException("Erro ao excluir o disciplina - "+ex.getMessage());
+        }
+    }
+
+    public List<DisciplinaVO> pesquisaParteNome (String parteNome) throws NegocioException{
+        try{
+            return disciplinaDAO.buscaPorDisciplina(parteNome);
+        }catch (PersistenciaException ex) {
+            throw new NegocioException("Erro ao pesquisar a disciplina - " + ex.getMessage());
+        }
+
+    }
+    public DisciplinaVO pesquisaCodigo(int codigo) throws NegocioException{
+        try{
+            return disciplinaDAO.buscarPorCodigo(codigo);
+
+        }catch (PersistenciaException ex){
+            throw new NegocioException("Erro ao pesquisar a disciplina - "+ex.getMessage());
+        }
+
+    }
 
     //metodo auxiliar
     public String validarDados(DisciplinaVO disciplina){
