@@ -36,13 +36,16 @@ public class DisciplinaDAO extends DAO{
     public int incluir(DisciplinaVO disciplina) throws PersistenciaException{
         int retorno =0;
         Map <String, Integer> listaGrupos = obterGrupoCurso();
+        //System.out.println(listaGrupos);
+        //System.out.println("Disciplina: "+disciplina.getCurso());
+        //System.out.println("Cod?:"+listaGrupos.get("Medicina"));
         try{
             comandoIncluir.setString(1, disciplina.getNome());
             comandoIncluir.setInt(2, disciplina.getSemestre());
             comandoIncluir.setInt(3, disciplina.getCargaHoraria());
             comandoIncluir.setInt(4, listaGrupos.get(disciplina.getCurso()));
             retorno = comandoIncluir.executeUpdate();
-        }catch(SQLException ex){
+        }catch(Exception ex){
             throw new PersistenciaException(" Erro ao incluir aluno − " + ex.getMessage());
         }       
         return retorno;
@@ -54,9 +57,9 @@ public class DisciplinaDAO extends DAO{
        try{
             comandoAlterar.setString(1, disciplina.getNome());
             comandoAlterar.setInt(2, disciplina.getSemestre());
-            comandoAlterar.setInt(3, disciplina.getCargaHoraria());
-            comandoAlterar.setInt(4, listaGrupos.get(disciplina.getCurso()));
-            
+            comandoAlterar.setInt(3, disciplina.getCargaHoraria());            
+            comandoAlterar.setInt(4, listaGrupos.get(disciplina.getCurso()));            
+            comandoAlterar.setInt(5, disciplina.getCodigo());
             retorno = comandoAlterar.executeUpdate();
         }catch (SQLException ex){
             throw new PersistenciaException("Erro ao alterar curso - "+ex.getMessage());
@@ -80,11 +83,11 @@ public class DisciplinaDAO extends DAO{
     public DisciplinaVO buscarPorCodigo (int codigo) throws PersistenciaException{
         DisciplinaVO disciplina = null;
 
-        try{
+        try{           
             comandoBuscaCodigo.setInt(1, codigo);
             ResultSet rs = comandoBuscaCodigo.executeQuery();
-            if(rs.next()){
-                disciplina = this.montaDisciplina(rs);
+            if(rs.next()){                
+                disciplina = this.montaDisciplina(rs);                
             }
 
         }catch (Exception ex){
@@ -120,9 +123,9 @@ public class DisciplinaDAO extends DAO{
                 discTemp.setCodigo(rs.getInt("codigo"));
                 discTemp.setNome(rs.getString("nome").trim());
                 discTemp.setSemestre(rs.getInt("semestre"));
-                discTemp.setCargaHoraria(rs.getInt("cargahoraria"));
+                discTemp.setCargaHoraria(rs.getInt("cargahoraria"));                  
                 discTemp.setCurso(obterNomeGrupoCurso(rs.getInt("curso")));
-                
+                             
             }catch(Exception ex){
                  throw new PersistenciaException("Erro ao acessar dados do resultado");
 
@@ -132,21 +135,22 @@ public class DisciplinaDAO extends DAO{
         return discTemp;
     }
    
-    public String obterNomeGrupoCurso(int codigo) throws PersistenciaException{
+    public String obterNomeGrupoCurso(int cod) throws PersistenciaException{
         String nomeGrupo = null;
-        PreparedStatement comandoGrupoCurso = null;
-
+        PreparedStatement comandoGrupoCurso = null;        
        
         try{
-            comandoGrupoCurso = conexao.getConexao().prepareStatement("SELECT * FROM curso WHERE codigo = ?");
-            comandoGrupoCurso.setInt(1, codigo);
+            
+            comandoGrupoCurso = conexao.getConexao().prepareStatement("SELECT * FROM Curso WHERE codigo = ?");
+            comandoGrupoCurso.setInt(1, cod);
             ResultSet resultado = comandoGrupoCurso.executeQuery();
-            if(resultado != null){
+           
+            if(resultado.next()){                
                 nomeGrupo = resultado.getString("nome");
-            }
+            }             
         }catch(SQLException ex){
             throw new PersistenciaException("Erro ao recuperar um grupo" + ex.toString());
-        }
+        }        
         return nomeGrupo;
     }
 
@@ -157,7 +161,7 @@ public class DisciplinaDAO extends DAO{
             comandoGrupoCurso = conexao.getConexao().prepareStatement("SELECT * FROM Curso ORDER BY nome");
             ResultSet resultado = comandoGrupoCurso.executeQuery();
             while(resultado.next()){
-                listaGrupos.put(resultado.getString("nome"), resultado.getInt("codigo"));
+                listaGrupos.put(resultado.getString("nome").trim(), resultado.getInt("codigo"));
             }
             resultado.close();
         }catch(SQLException ex){
