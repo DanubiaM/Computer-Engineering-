@@ -165,14 +165,16 @@ public class MenuAluno {
                 System.out.println("Bairro: "+alunoVO.getEndereco().getBairro());
                 System.out.println("Cidade: "+alunoVO.getEndereco().getCidade());
                 System.out.println("UF: "+alunoVO.getEndereco().getUf());
-                System.out.println("---------------------------------------------------");
+                
 
             }
+           System.out.println("Curso: "+alunoVO.getCurso());
+            System.out.println("---------------------------------------------------");
         }
     }
     
     private static AlunoVO lerDados(AlunoVO alunoTemp){
-        String nome, nomeMae, nomePai, logradouro, bairro, cidade;
+        String nome, nomeMae, nomePai, logradouro, bairro, cidade, curso;
         int numero;
         EnumSexo sexo;
         EnumUF uf;
@@ -208,6 +210,9 @@ public class MenuAluno {
 
              uf = (EnumUF) JOptionPane.showInputDialog(null, " Escolha uma opcao", "Leitura de Dados", JOptionPane.QUESTION_MESSAGE, null, EnumUF.values(), alunoTemp.getEndereco().getUf());
              alunoTemp.getEndereco().setUf(uf);
+
+             curso = JOptionPane.showInputDialog("Forneca o nome do curso ", alunoTemp.getCurso().trim());
+             alunoTemp.setCurso(curso);
         }catch (Exception ex){
             System.out.println("Digitacao inconsistente - " +ex.getMessage());
         }
