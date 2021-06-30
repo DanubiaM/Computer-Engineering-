@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import vo.AlunoVO ;
 import vo.EnumSexo ;
 import vo.EnumUF ;
@@ -25,8 +27,8 @@ public class AlunoDAO extends DAO{
     public AlunoDAO( Conexaobd conexao ) throws PersistenciaException{
         super(conexao);
         try{
-            comandoIncluir = conexao.getConexao().prepareStatement( "INSERT INTO Aluno ( nome , nomemae , nomepai , sexo , " + " logradouro , numero , bairro , cidade , uf )VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? ) " );
-            comandoAlterar = conexao.getConexao().prepareStatement("UPDATE Aluno SET nome=? , nomemae=? , nomepai=? , sexo=? , " + " logradouro =? , numero=? , bairro =? , cidade =? , uf=? WHERE matricula=?" );
+            comandoIncluir = conexao.getConexao().prepareStatement( "INSERT INTO Aluno ( nome , nomemae , nomepai , sexo , " + " logradouro , numero , bairro , cidade , uf, curso )VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ?, ? ) " );
+            comandoAlterar = conexao.getConexao().prepareStatement("UPDATE Aluno SET nome=? , nomemae=? , nomepai=? , sexo=? , " + " logradouro =? , numero=? , bairro =? , cidade =? , uf=?, curso-? WHERE matricula=?" );
             comandoExcluir = conexao.getConexao().prepareStatement( "DELETE FROM Aluno WHERE matricula=?");
             comandoBuscaMatricula = conexao.getConexao().prepareStatement ( "SELECT * FROM Aluno WHERE matricula = ? ");
         }catch( SQLException ex ) {
@@ -36,6 +38,7 @@ public class AlunoDAO extends DAO{
 
     public int incluir (AlunoVO alunoVO ) throws PersistenciaException {
         int retorno= 0 ;
+        Map <String, Integer> listaGrupos = obterGrupoCurso();
         try{
             comandoIncluir.setString(1 , alunoVO.getNome ()) ;
             comandoIncluir.setString ( 2 , alunoVO.getNomeMae ()) ;
@@ -46,6 +49,8 @@ public class AlunoDAO extends DAO{
             comandoIncluir.setString(7 , alunoVO.getEndereco().getBairro());
             comandoIncluir.setString(8 , alunoVO.getEndereco().getCidade());
             comandoIncluir.setString( 9 , alunoVO.getEndereco().getUf().name());
+            comandoIncluir.setInt(10 , listaGrupos.get(alunoVO.getCurso())) ;
+
             retorno = comandoIncluir.executeUpdate();
         } catch (SQLException ex){
              throw new PersistenciaException(" Erro ao incluir aluno − " + ex.getMessage());
@@ -55,6 +60,8 @@ public class AlunoDAO extends DAO{
 
     public int alterar(AlunoVO alunoVO ) throws PersistenciaException{
         int retorno = 0; 
+       Map <String, Integer> listaGrupos = obterGrupoCurso();
+
         try{
             comandoAlterar.setString(1, alunoVO.getNome());
             comandoAlterar.setString(2, alunoVO.getNomeMae());
@@ -65,7 +72,10 @@ public class AlunoDAO extends DAO{
             comandoAlterar.setString(7, alunoVO.getEndereco().getBairro());
             comandoAlterar.setString(8, alunoVO.getEndereco().getCidade());
             comandoAlterar.setString(9, alunoVO.getEndereco().getUf().name());
-            comandoAlterar.setInt(10, alunoVO.getMatricula());
+            comandoAlterar.setInt(10, listaGrupos.get(alunoVO.getCurso()));  
+            comandoAlterar.setInt(11, alunoVO.getMatricula());
+                      
+
             retorno = comandoAlterar.executeUpdate();
         }catch(SQLException ex){
             throw new PersistenciaException( "Erro ao alterar o aluno − " + ex.getMessage());
@@ -139,6 +149,8 @@ public class AlunoDAO extends DAO{
                 alu.getEndereco().setCidade(rs.getString("cidade"));
                 //alu.getEndereco().setUf(EnumUF.valueOf(rs.getString("uf")));
                 alu.getEndereco().setUf(EnumUF.valueOf(rs.getString("uf").trim()));
+                alu.setCurso(obterNomeGrupoCurso(rs.getInt("curso")).trim());
+
             }catch(Exception ex){
                 throw new PersistenciaException(" Erro ao acessar os dados do resultado");
             }
@@ -146,5 +158,39 @@ public class AlunoDAO extends DAO{
         return alu;
     }
 
+public String obterNomeGrupoCurso(int cod) throws PersistenciaException{
+        String nomeGrupo = null;
+        PreparedStatement comandoGrupoCurso = null;        
+       
+        try{
+            
+            comandoGrupoCurso = conexao.getConexao().prepareStatement("SELECT * FROM Curso WHERE codigo = ?");
+            comandoGrupoCurso.setInt(1, cod);
+            ResultSet resultado = comandoGrupoCurso.executeQuery();
+           
+            if(resultado.next()){                
+                nomeGrupo = resultado.getString("nome");
+            }             
+        }catch(SQLException ex){
+            throw new PersistenciaException("Erro ao recuperar um grupo" + ex.toString());
+        }        
+        return nomeGrupo;
+    }
+
+    public Map<String, Integer> obterGrupoCurso(){
+        Map <String, Integer> listaGrupos = new HashMap();
+        PreparedStatement comandoGrupoCurso = null;
+        try{
+            comandoGrupoCurso = conexao.getConexao().prepareStatement("SELECT * FROM Curso ORDER BY nome");
+            ResultSet resultado = comandoGrupoCurso.executeQuery();
+            while(resultado.next()){
+                listaGrupos.put(resultado.getString("nome").trim(), resultado.getInt("codigo"));
+            }
+            resultado.close();
+        }catch(SQLException ex){
+            System.out.println("Erro ao recuperar o grupo de cursos - "+ex.toString());
+        }
+        return listaGrupos;
+    }
 }
 
