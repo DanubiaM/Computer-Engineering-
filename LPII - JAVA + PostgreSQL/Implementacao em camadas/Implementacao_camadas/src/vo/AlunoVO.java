@@ -10,7 +10,7 @@ public class AlunoVO {
     private String nomePai;
     private EnumSexo sexo;
     private EnderecoVO endereco;
-    private String Curso;
+    private String curso;
 
 public AlunoVO (){
     this.endereco = new EnderecoVO ();
