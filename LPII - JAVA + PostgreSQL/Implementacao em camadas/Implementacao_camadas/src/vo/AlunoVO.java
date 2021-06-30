@@ -10,6 +10,7 @@ public class AlunoVO {
     private String nomePai;
     private EnumSexo sexo;
     private EnderecoVO endereco;
+    private String Curso;
 
 public AlunoVO (){
     this.endereco = new EnderecoVO ();
@@ -74,9 +75,16 @@ public void setSexo(EnumSexo sexo){
  public void setEndereco( EnderecoVO endereco){
       this.endereco = endereco;
 }
+public String getCurso (){
+   return curso ;
+ }
+
+ public void setCurso( String curso ) {
+      this.curso = curso ;
+ }
 
 @Override
  public String toString(){
-      return matricula+" , "+ nome +", "+ sexo+" ,residente em:"+endereco;
+      return matricula+" , "+ nome +", "+ sexo+ ","+curso+" ,residente em:"+endereco;
   }
 }
