@@ -112,36 +112,53 @@ public class CursoDAO extends DAO{
 
     private CursoVO montaCursoVO(ResultSet rs) throws PersistenciaException{
         CursoVO curso = new CursoVO();
-
+         
         if (rs != null){
             try{
                curso.setCodigo(rs.getInt("codigo"));
                curso.setNome(rs.getString("nome").trim());
                curso.setDescricao(rs.getString("descricao").trim());
+
             }catch (Exception ex){
                 throw new PersistenciaException("Erro ao acessar dados do resultado");
             }
         }
         return curso;
     }
-    public List<CursoVO> listaCursos() throws PersistenciaException{
-        List <CursoVO> listadeCursos = new ArrayList<CursoVO>();
-        CursoVO cursoTemp = null;
-
-        String comandoSQL = "SELECT codigo, nome FROM Curso";
+    public List <CursoVO> listaCursos() throws PersistenciaException{
+        List <CursoVO> cursosCadastrados = new ArrayList<CursoVO>();
+        CursoVO curso = null;
+        String sqlcommand = "SELECT codigo, nome  FROM Curso ";
         try{
-            PreparedStatement comando = conexao.getConexao().prepareStatement(comandoSQL);
+            
+            PreparedStatement comando = conexao.getConexao().prepareStatement(sqlcommand);
             ResultSet rs = comando.executeQuery();
+            
             while(rs.next()){
-                cursoTemp = montaCursoVO(rs);
-                listadeCursos.add(cursoTemp);
+                curso = montaCurso(rs);
+                cursosCadastrados.add(curso);             
             }
             comando.close();
         }catch(SQLException ex){
             System.out.println("Erro ao recuperar lista de cursos cadastrados - "+ex.toString());
-        }
-        return listadeCursos;
+        }       
         
+        return cursosCadastrados;
+    }
+    private CursoVO montaCurso(ResultSet rs) throws PersistenciaException{
+            CursoVO curso = new CursoVO();
+
+            if (rs != null){
+                try{
+                   curso.setCodigo(rs.getInt("codigo"));
+                   curso.setNome(rs.getString("nome").trim());
+                   
+
+                }catch (Exception ex){
+                    throw new PersistenciaException("Erro ao acessar dados do resultado");
+                }
+            }
+            return curso;
     }
 
            
