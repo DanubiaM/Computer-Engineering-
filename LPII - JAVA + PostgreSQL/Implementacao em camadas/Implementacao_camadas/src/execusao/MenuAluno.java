@@ -8,7 +8,8 @@ import java.util.List;
 import javax.swing.JOptionPane ;
 import negocio.AlunoNegocio;
 import negocio.NegocioException ;
-
+import java.util.HashMap;
+import java.util.Map;
 import vo.AlunoVO;
 import vo.EnumSexo;
 import vo.EnumUF;
@@ -173,12 +174,13 @@ public class MenuAluno {
         }
     }
     
-    private static AlunoVO lerDados(AlunoVO alunoTemp){
+    private static AlunoVO lerDados(AlunoVO alunoTemp) throws NegocioException{
         String nome, nomeMae, nomePai, logradouro, bairro, cidade, curso;
         int numero;
         EnumSexo sexo;
         EnumUF uf;
-        
+         Map <String, Integer> listaGrupos = alunoNegocio.obterLista();
+
         try{
             
             nome = JOptionPane.showInputDialog("Forneca o nome do aluno ", alunoTemp.getNome().trim());
@@ -211,7 +213,7 @@ public class MenuAluno {
              uf = (EnumUF) JOptionPane.showInputDialog(null, " Escolha uma opcao", "Leitura de Dados", JOptionPane.QUESTION_MESSAGE, null, EnumUF.values(), alunoTemp.getEndereco().getUf());
              alunoTemp.getEndereco().setUf(uf);
 
-             curso = JOptionPane.showInputDialog("Forneca o nome do curso ", alunoTemp.getCurso().trim());
+             curso = (String)JOptionPane.showInputDialog(null, "Forneca o nome do curso ","Cursos",JOptionPane.QUESTION_MESSAGE, null, listaGrupos.keySet().toArray(), listaGrupos.keySet().toArray()[0]);
              alunoTemp.setCurso(curso);
         }catch (Exception ex){
             System.out.println("Digitacao inconsistente - " +ex.getMessage());
@@ -219,7 +221,7 @@ public class MenuAluno {
         return alunoTemp;
     }
 
-    private static AlunoVO lerDados(){
+    private static AlunoVO lerDados() throws NegocioException{
         AlunoVO alunoTemp = new AlunoVO();
         return lerDados(alunoTemp);
     }

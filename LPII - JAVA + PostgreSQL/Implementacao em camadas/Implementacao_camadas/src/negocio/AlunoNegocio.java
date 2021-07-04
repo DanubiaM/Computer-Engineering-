@@ -4,6 +4,8 @@ import java.util.List;
 import persistencia.AlunoDAO;
 import persistencia.Conexaobd;
 import persistencia.PersistenciaException;
+import java.util.HashMap;
+import java.util.Map;
 import vo.AlunoVO;
 
 
@@ -73,6 +75,14 @@ public class AlunoNegocio {
         }
     }
 
+    public Map<String, Integer> obterLista() throws NegocioException{
+        try{
+            return alunoDAO.obterGrupoCurso();
+        }catch (Exception ex) {
+            throw new NegocioException("Erro ao obter lista de cursos - " + ex.getMessage());
+        }
+
+    }
 
     private String validarDados(AlunoVO alunoVO) {
         String mensagemErros = "";
