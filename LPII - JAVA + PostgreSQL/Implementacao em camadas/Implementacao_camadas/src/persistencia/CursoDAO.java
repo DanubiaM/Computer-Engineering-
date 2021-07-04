@@ -124,7 +124,7 @@ public class CursoDAO extends DAO{
         }
         return curso;
     }
-    private List<CursoVO> listaCursos() throws PersistenciaException{
+    public List<CursoVO> listaCursos() throws PersistenciaException{
         List <CursoVO> listadeCursos = new ArrayList<CursoVO>();
         CursoVO cursoTemp = null;
 
