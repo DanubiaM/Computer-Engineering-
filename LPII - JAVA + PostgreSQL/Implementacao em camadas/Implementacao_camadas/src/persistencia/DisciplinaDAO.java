@@ -134,6 +134,25 @@ public class DisciplinaDAO extends DAO{
         }
         return discTemp;
     }
+    public DisciplinaVO montaDisciplinaL (ResultSet rs) throws PersistenciaException{
+        DisciplinaVO discTemp= new DisciplinaVO();
+        
+        if(rs != null){
+            try{
+                discTemp.setCodigo(rs.getInt("codigo"));
+                discTemp.setNome(rs.getString("nome").trim());
+                discTemp.setSemestre(rs.getInt("semestre"));
+                discTemp.setCargaHoraria(rs.getInt("cargahoraria"));                  
+                
+                             
+            }catch(Exception ex){
+                 throw new PersistenciaException("Erro ao acessar dados do resultado");
+
+            }
+            
+        }
+        return discTemp;
+    }
    public List <DisciplinaVO> listaDisciplina() throws PersistenciaException{
         List <DisciplinaVO> disciplinasCadastradas = new ArrayList<DisciplinaVO>();
         DisciplinaVO disciplina = null;
@@ -144,7 +163,7 @@ public class DisciplinaDAO extends DAO{
             ResultSet rs = comando.executeQuery();
             
             while(rs.next()){
-                disciplina = montaDisciplina(rs);
+                disciplina = montaDisciplinaL(rs);
                 disciplinasCadastradas.add(disciplina);             
             }
             comando.close();
