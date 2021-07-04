@@ -19,6 +19,7 @@ public AlunoVO (){
     this.nomeMae = "";
     this.nomePai = "";
     this.sexo = EnumSexo.FEMININO ;
+    this.curso = "";
 }
 
 public AlunoVO ( int matricula , String nome , EnumSexo sexo) {

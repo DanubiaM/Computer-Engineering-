@@ -49,8 +49,7 @@ public class AlunoDAO extends DAO{
             comandoIncluir.setString(7 , alunoVO.getEndereco().getBairro());
             comandoIncluir.setString(8 , alunoVO.getEndereco().getCidade());
             comandoIncluir.setString( 9 , alunoVO.getEndereco().getUf().name());
-            comandoIncluir.setInt(10 , listaGrupos.get(alunoVO.getCurso())) ;
-
+            comandoIncluir.setInt(10 , listaGrupos.get(alunoVO.getCurso())) ; 
             retorno = comandoIncluir.executeUpdate();
         } catch (SQLException ex){
              throw new PersistenciaException(" Erro ao incluir aluno − " + ex.getMessage());
@@ -74,7 +73,7 @@ public class AlunoDAO extends DAO{
             comandoAlterar.setString(9, alunoVO.getEndereco().getUf().name());
             comandoAlterar.setInt(10, listaGrupos.get(alunoVO.getCurso()));  
             comandoAlterar.setInt(11, alunoVO.getMatricula());
-                      
+                     
 
             retorno = comandoAlterar.executeUpdate();
         }catch(SQLException ex){
