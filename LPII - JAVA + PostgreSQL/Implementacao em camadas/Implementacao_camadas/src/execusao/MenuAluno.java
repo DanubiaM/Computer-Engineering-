@@ -4,12 +4,16 @@
  */
 
 package execusao;
-import java.util.List;
+
 import javax.swing.JOptionPane ;
 import negocio.AlunoNegocio;
 import negocio.NegocioException ;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.List;
+import java.util.ArrayList;
 import vo.AlunoVO;
 import vo.EnumSexo;
 import vo.EnumUF;
@@ -54,6 +58,9 @@ public class MenuAluno {
                             break;
                         case PesqNome:
                             pesquisarPorNome();
+                            break;
+                        case ListaAlunos:
+                            listaAlunos();
                             break;
                     }
                 }catch (NegocioException ex){
@@ -173,7 +180,30 @@ public class MenuAluno {
             System.out.println("---------------------------------------------------");
         }
     }
-    
+    private static void listaAlunos()  throws NegocioException{
+        List<AlunoVO> listaAlunos = alunoNegocio.listaTodosAlunos();       
+        
+        
+        System.out.println("LISTA DE ALUNOS CADASTRADOS");
+        if (listaAlunos.size() > 0 ){
+                for( AlunoVO alunoVO : listaAlunos){
+
+                    System.out.println("Matricula............:"+alunoVO.getMatricula());
+                    System.out.println("Nome.................:"+alunoVO.getNome());
+                    System.out.println("Sexo.................:"+alunoVO.getSexo());
+                    System.out.println("----------------------------------------");
+                      
+                 
+                }        
+                
+        }else{
+            System.out.println("Não foi possivel obter lista de alunos cadastrados");
+        }
+        
+
+    }
+
+    //leitura de dados
     private static AlunoVO lerDados(AlunoVO alunoTemp) throws NegocioException{
         String nome, nomeMae, nomePai, logradouro, bairro, cidade, curso;
         int numero;

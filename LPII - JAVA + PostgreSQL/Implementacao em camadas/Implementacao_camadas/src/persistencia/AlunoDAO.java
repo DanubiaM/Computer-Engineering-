@@ -31,6 +31,7 @@ public class AlunoDAO extends DAO{
             comandoAlterar = conexao.getConexao().prepareStatement("UPDATE Aluno SET nome=? , nomemae=? , nomepai=? , sexo=? , " + " logradouro =? , numero=? , bairro =? , cidade =? , uf=?, curso-? WHERE matricula=?" );
             comandoExcluir = conexao.getConexao().prepareStatement( "DELETE FROM Aluno WHERE matricula=?");
             comandoBuscaMatricula = conexao.getConexao().prepareStatement ( "SELECT * FROM Aluno WHERE matricula = ? ");
+            
         }catch( SQLException ex ) {
              throw new PersistenciaException(" Erro ao incluir novo aluno − " + ex.getMessage());
         }     
@@ -190,6 +191,43 @@ public String obterNomeGrupoCurso(int cod) throws PersistenciaException{
             System.out.println("Erro ao recuperar o grupo de cursos - "+ex.toString());
         }
         return listaGrupos;
+    }
+    
+    public List <AlunoVO> listaAlunos() throws PersistenciaException{
+        List <AlunoVO> alunosCadastrados = new ArrayList<AlunoVO>();
+        AlunoVO aluno = null;
+        String sqlcommand = "SELECT matricula, nome, sexo  FROM Aluno ";
+        try{
+            
+            PreparedStatement comando = conexao.getConexao().prepareStatement(sqlcommand);
+            ResultSet rs = comando.executeQuery();
+            
+            while(rs.next()){
+                aluno = montaAlunoVO(rs);
+                alunosCadastrados.add(aluno);
+             
+            }
+            comando.close();
+        }catch(SQLException ex){
+            System.out.println("Erro ao recuperar lista de alunos cadastrados - "+ex.toString());
+        }       
+        
+        return alunosCadastrados;
+    }
+    private AlunoVO montaAluno(ResultSet rs)throws PersistenciaException{
+        AlunoVO alunoTemp = new AlunoVO();
+
+        try{
+            if (rs != null){
+                    alunoTemp.setMatricula(rs.getInt("matricula"));
+                    alunoTemp.setNome(rs.getString("nome").trim());
+                                            //EnumSexo.Values()[0 ou 1]
+                    alunoTemp.setSexo(EnumSexo.values()[rs.getInt("sexo")]);
+            }
+            return alunoTemp;
+        }catch(SQLException ex){
+            throw new PersistenciaException(" Erro ao acessar os dados do resultado");
+        }
     }
 }
 
