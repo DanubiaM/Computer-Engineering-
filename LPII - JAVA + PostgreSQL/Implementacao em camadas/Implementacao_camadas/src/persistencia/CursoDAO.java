@@ -123,7 +123,26 @@ public class CursoDAO extends DAO{
             }
         }
         return curso;
-    }            
+    }
+    private List<CursoVO> listaCursos() throws PersistenciaException{
+        List <CursoVO> listadeCursos = new ArrayList<CursoVO>();
+        CursoVO cursoTemp = null;
+
+        String comandoSQL = "SELECT codigo, nome FROM Curso";
+        try{
+            PreparedStatement comando = conexao.getConexao().prepareStatement(comandoSQL);
+            ResultSet rs = comando.executeQuery();
+            while(rs.next()){
+                cursoTemp = montaCursoVO(rs);
+                listadeCursos.add(cursoTemp);
+            }
+            comando.close();
+        }catch(SQLException ex){
+            System.out.println("Erro ao recuperar lista de cursos cadastrados - "+ex.toString());
+        }
+        return listadeCursos;
+        
+    }
 
            
 }
