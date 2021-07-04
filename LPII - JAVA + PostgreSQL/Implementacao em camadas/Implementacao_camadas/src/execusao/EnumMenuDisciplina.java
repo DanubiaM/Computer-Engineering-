@@ -15,6 +15,7 @@ public enum EnumMenuDisciplina {
     AlterarDisciplina,
     ExcluirDisciplina,
     PesqCodigo,
-    PesqNome,  
+    PesqNome,
+    ListaDisciplinas,
     Sair
 }

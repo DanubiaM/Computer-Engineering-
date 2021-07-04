@@ -49,6 +49,8 @@ public class MenuDisciplina {
                         case PesqNome:
                             pesquisarPorNome();
                             break;
+                        case ListaDisciplinas:
+                            listarDisciplinas();
                     }
                 }catch (NegocioException ex){
                     System.out.println("Operacao nao realizada corretamente - "+ex.getMessage());
@@ -182,6 +184,26 @@ public class MenuDisciplina {
 
         }
     }
+
+    public void listarDisciplinas()throws NegocioException{
+        List<DisciplinaVO> listaDisciplina = disciplinaNegocio.listaTodasDisciplinas();      
+
+        if (listaDisciplina.size() > 0 ){
+            System.out.println("LISTA DE DISCIPLINAS CADASTRADAS");
+            for( DisciplinaVO disciplinaVO : listaDisciplina){
+
+                System.out.println("Codigo...............:"+disciplinaVO.getCodigo());
+                System.out.println("Nome.................:"+disciplinaVO.getNome());
+                System.out.println("Semestre.............:"+disciplinaVO.getSemestre());
+                System.out.println("Carga Horária.............:"+disciplinaVO.getCargaHoraria());
+                System.out.println("----------------------------------------");                      
+            }            
+        }else{
+            System.out.println("Não foi possivel obter lista de alunos cadastrados");
+        }       
+    }
+
+    
      private static EnumMenuDisciplina exibirMenu(){
         EnumMenuDisciplina opcao;
         
