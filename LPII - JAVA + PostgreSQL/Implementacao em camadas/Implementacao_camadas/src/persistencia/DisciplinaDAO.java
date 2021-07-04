@@ -134,7 +134,27 @@ public class DisciplinaDAO extends DAO{
         }
         return discTemp;
     }
-   
+   public List <DisciplinaVO> listaDisciplina() throws PersistenciaException{
+        List <DisciplinaVO> disciplinasCadastradas = new ArrayList<DisciplinaVO>();
+        DisciplinaVO disciplina = null;
+        String sqlcommand = "SELECT codigo, nome, semestre, cargahoraria  FROM Disciplina";
+        try{
+            
+            PreparedStatement comando = conexao.getConexao().prepareStatement(sqlcommand);
+            ResultSet rs = comando.executeQuery();
+            
+            while(rs.next()){
+                disciplina = montaDisciplina(rs);
+                disciplinasCadastradas.add(disciplina);             
+            }
+            comando.close();
+        }catch(SQLException ex){
+            System.out.println("Erro ao recuperar lista de disciplinas cadastradas - "+ex.toString());
+        }       
+        
+        return disciplinasCadastradas;
+    }
+
     public String obterNomeGrupoCurso(int cod) throws PersistenciaException{
         String nomeGrupo = null;
         PreparedStatement comandoGrupoCurso = null;        
