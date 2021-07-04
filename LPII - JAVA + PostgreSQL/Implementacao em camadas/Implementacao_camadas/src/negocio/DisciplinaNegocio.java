@@ -80,6 +80,13 @@ public class DisciplinaNegocio {
         }
 
     }
+    public List<DisciplinaVO> listaTodasDisciplinas() throws NegocioException{
+        try{
+            return disciplinaDAO.listaDisciplina();
+        }catch (Exception ex) {
+            throw new NegocioException("Erro ao obter lista de disciplinas - " + ex.getMessage());
+        }
+    }
 
     //metodo auxiliar
     public String validarDados(DisciplinaVO disciplina){
