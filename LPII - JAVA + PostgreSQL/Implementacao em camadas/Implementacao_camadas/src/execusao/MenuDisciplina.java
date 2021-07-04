@@ -2,6 +2,8 @@
 package execusao;
 import java.util.List;
 import javax.swing.JOptionPane ;
+import java.util.HashMap;
+import java.util.Map;
 
 import negocio.DisciplinaNegocio;
 import negocio.NegocioException ;
@@ -143,15 +145,17 @@ public class MenuDisciplina {
     /* Criando Métodos Auxiliares de leitra e impressao de dados*/
 
     //leitura de dados
-    private DisciplinaVO lerDados(){
+    private DisciplinaVO lerDados() throws NegocioException{
         DisciplinaVO disciplinaTemporario = new DisciplinaVO();
 
         return lerDados(disciplinaTemporario);
     }
 
-    private DisciplinaVO lerDados(DisciplinaVO disciplinaTemp){
+    private DisciplinaVO lerDados(DisciplinaVO disciplinaTemp) throws NegocioException{
         String nome, curso;
         int cargahoraria, semestre;
+        Map <String, Integer> listaGrupos = disciplinaNegocio.obterLista();
+
         try{
             nome = JOptionPane.showInputDialog("Forneca o nome da Disciplina", disciplinaTemp.getNome().trim());
             disciplinaTemp.setNome(nome);           
@@ -163,7 +167,7 @@ public class MenuDisciplina {
             disciplinaTemp.setCargaHoraria(cargahoraria);
             
 
-            curso = JOptionPane.showInputDialog("Forneca a descricao do curso", disciplinaTemp.getCurso().trim());
+            curso = (String)JOptionPane.showInputDialog(null, "Forneca o nome do curso ","Cursos",JOptionPane.QUESTION_MESSAGE, null, listaGrupos.keySet().toArray(), listaGrupos.keySet().toArray()[0]);
             disciplinaTemp.setCurso(curso);
             
         }catch (Exception ex){

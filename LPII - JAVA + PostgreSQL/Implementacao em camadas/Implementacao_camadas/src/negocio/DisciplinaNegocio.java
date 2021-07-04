@@ -1,6 +1,8 @@
 
 package negocio;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import persistencia.DisciplinaDAO;
 import persistencia.Conexaobd;
 import persistencia.PersistenciaException;
@@ -87,7 +89,14 @@ public class DisciplinaNegocio {
             throw new NegocioException("Erro ao obter lista de disciplinas - " + ex.getMessage());
         }
     }
+    public Map<String, Integer> obterLista() throws NegocioException{
+        try{
+            return disciplinaDAO.obterGrupoCurso();
+        }catch (Exception ex) {
+            throw new NegocioException("Erro ao obter lista da disciplina - " + ex.getMessage());
+        }
 
+    }
     //metodo auxiliar
     public String validarDados(DisciplinaVO disciplina){
         String mensagemErros = "";
