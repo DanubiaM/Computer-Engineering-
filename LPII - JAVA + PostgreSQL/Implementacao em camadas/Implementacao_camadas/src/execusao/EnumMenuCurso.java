@@ -15,6 +15,7 @@ public enum EnumMenuCurso {
     AlterarCurso,
     ExcluirCurso,
     PesqCodigo,
-    PesqNome,  
+    PesqNome,
+    ListaCursos,
     Sair
 }

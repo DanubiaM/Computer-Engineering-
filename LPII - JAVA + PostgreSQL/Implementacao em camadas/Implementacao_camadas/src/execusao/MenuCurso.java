@@ -49,6 +49,8 @@ public class MenuCurso {
                         case PesqNome:
                             pesquisarPorNome();
                             break;
+                        case  ListaCursos:
+                            listarCursos();
                     }
                 }catch (NegocioException ex){
                     System.out.println("Operacao nao realizada corretamente - "+ex.getMessage());
@@ -171,6 +173,26 @@ public class MenuCurso {
 
         }
     }
+    public void listarCursos() throws NegocioException{
+    List <CursoVO> lista = cursoNegocio.listaCursos();
+    
+        if (lista.size() > 0 ){
+            System.out.println("LISTA DE CURSOS CADASTRADOS");
+            for( CursoVO cursoVO : lista){
+
+                System.out.println("Codigo............:"+cursoVO.getCodigo());
+                System.out.println("Nome.................:"+cursoVO.getNome());                    
+                System.out.println("----------------------------------------");                     
+                 
+            }       
+                
+        }else{
+            System.out.println("Não foi possivel obter lista de cursos cadastrados");
+        }
+    
+
+    }
+
      private static EnumMenuCurso exibirMenu(){
         EnumMenuCurso opcao;
         
