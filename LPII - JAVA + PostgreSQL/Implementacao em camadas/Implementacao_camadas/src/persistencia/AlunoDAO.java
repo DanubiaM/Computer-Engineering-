@@ -203,7 +203,7 @@ public String obterNomeGrupoCurso(int cod) throws PersistenciaException{
             ResultSet rs = comando.executeQuery();
             
             while(rs.next()){
-                aluno = montaAlunoVO(rs);
+                aluno = montaAluno(rs);
                 alunosCadastrados.add(aluno);             
             }
             comando.close();
@@ -213,7 +213,22 @@ public String obterNomeGrupoCurso(int cod) throws PersistenciaException{
         
         return alunosCadastrados;
     }
-    
+
+     private AlunoVO montaAluno (ResultSet rs)throws PersistenciaException{
+        AlunoVO alu = new AlunoVO();
+        if( rs != null){
+            try{
+                alu.setMatricula(rs.getInt("matricula"));
+                alu.setNome(rs.getString("Nome").trim());
+                alu.setSexo(EnumSexo.values()[rs.getInt("sexo")]);
+            }catch(Exception ex){
+                throw new PersistenciaException(" Erro ao acessar os dados do resultado");
+            }
+        }
+        return alu;
+    }
+
+
     public void listaAlunoDisciplina(String nome) throws PersistenciaException{
         
         
