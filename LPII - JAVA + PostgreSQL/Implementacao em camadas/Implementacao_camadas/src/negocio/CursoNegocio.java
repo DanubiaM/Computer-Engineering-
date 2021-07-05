@@ -86,12 +86,22 @@ public class CursoNegocio {
         }
 
     }
- public void listaCursoeAluno(String curso) throws NegocioException{
+    public void listaCursoeAluno(String curso) throws NegocioException{
+           try{
+                cursoDAO.listaCursoAluno(curso);
+
+           }catch (PersistenciaException ex){
+               throw new NegocioException("Erro ao pesquisar o curso - "+ex.getMessage());
+           }
+
+    }
+
+    public void listaCursoeDisciplina(String curso) throws NegocioException{
         try{
-             cursoDAO.listaCursoAluno(curso);
+             cursoDAO.listaCursoDisciplina(curso);
 
         }catch (PersistenciaException ex){
-            throw new NegocioException("Erro ao pesquisar o curso - "+ex.getMessage());
+            throw new NegocioException("Erro ao pesquisar a disciplina do curso - "+ex.getMessage());
         }
 
     }
