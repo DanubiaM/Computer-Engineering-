@@ -1,6 +1,7 @@
 
 package execusao;
 import java.util.List;
+import java.util.ArrayList;
 import javax.swing.JOptionPane ;
 
 import negocio.CursoNegocio;
@@ -51,6 +52,10 @@ public class MenuCurso {
                             break;
                         case  ListaCursos:
                             listarCursos();
+                            break;
+                        case ListarAlunosDoCurso:
+                            listarAlunosCurso();
+                            break;
                     }
                 }catch (NegocioException ex){
                     System.out.println("Operacao nao realizada corretamente - "+ex.getMessage());
@@ -161,6 +166,23 @@ public class MenuCurso {
             System.out.println("Digitacao inconsistente - " +ex.getMessage());
         }
         return cursoTemp;
+    }
+
+    public void listarAlunosCurso()throws NegocioException{
+        List listaCursos = new ArrayList();
+      
+        List <CursoVO> lista = cursoNegocio.listaCursos();     
+        for( CursoVO cursos : lista){
+              listaCursos.add(cursos.getNome());                 
+        }               
+
+        try{
+            String curso = (String)JOptionPane.showInputDialog(null, "Forneca o nome do curso","Cursos", JOptionPane.QUESTION_MESSAGE, null,listaCursos.toArray(), listaCursos.toArray()[0]);   
+            cursoNegocio.listaCursoeAluno(curso);
+        }catch (Exception ex){
+            System.out.println("Digitacao inconsistente - " +ex.getMessage());
+        }
+
     }
 
     //Impressao de Dados
