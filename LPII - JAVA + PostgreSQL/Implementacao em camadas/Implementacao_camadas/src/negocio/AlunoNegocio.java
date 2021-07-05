@@ -90,6 +90,15 @@ public class AlunoNegocio {
             throw new NegocioException("Erro ao obter lista de alunos - " + ex.getMessage());
         }
     }
+    public void listaAlunoeDisciplina(String nome) throws NegocioException{
+        try{
+             alunoDAO.listaAlunoDisciplina(nome);
+
+        }catch (PersistenciaException ex){
+            throw new NegocioException("Erro ao pesquisar a disciplinas do aluno  - "+ex.getMessage());
+        }
+
+    }
 
     private String validarDados(AlunoVO alunoVO) {
         String mensagemErros = "";
