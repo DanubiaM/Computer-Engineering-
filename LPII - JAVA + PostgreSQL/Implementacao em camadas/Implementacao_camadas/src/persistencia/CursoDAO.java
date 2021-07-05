@@ -163,7 +163,7 @@ public class CursoDAO extends DAO{
 
      public void listaCursoAluno(String curso) throws PersistenciaException{
         
-        String sqlcommand = null;
+        
         PreparedStatement comando = null;
         try{
             
@@ -182,5 +182,29 @@ public class CursoDAO extends DAO{
         }catch(SQLException ex){
             throw new PersistenciaException("Erro ao acessar alunos do curso");
         }
-    }      
+    } 
+
+ public void listaCursoDisciplina(String curso) throws PersistenciaException{
+        
+        
+        PreparedStatement comando = null;
+        try{
+            
+            comando = conexao.getConexao().prepareStatement("SELECT  Disciplina.nome as nomeDisciplina, Disciplina.codigo as codigoDisciplina, Curso.codigo as codigoCurso, Curso.nome as nomeCurso  \n" +
+                                                            "FROM Disciplina INNER JOIN Curso  ON curso = Curso.codigo  WHERE upper(Curso.nome) = ?"); 
+            comando.setString(1, curso.toUpperCase());         
+            ResultSet rs = comando.executeQuery();            
+            System.out.println(">>>LISTA DE DISCIPLINAS DO CURSO DE "+curso.toUpperCase()+"<<<");
+            while(rs.next()){
+                System.out.println("Codigo do Curso...........:"+rs.getInt("codigocurso"));
+                System.out.println("Nome do curso.............:"+rs.getString("nomecurso"));
+                System.out.println("Codigo Disciplina.................:"+rs.getInt("codigodisciplina"));
+                System.out.println("Disciplina......................:"+rs.getString("nomedisciplina"));
+                System.out.println(".......................................");
+            }
+            comando.close();
+        }catch(SQLException ex){
+            throw new PersistenciaException("Erro ao acessar disciplinas do curso");
+        }
+    }     
 }
