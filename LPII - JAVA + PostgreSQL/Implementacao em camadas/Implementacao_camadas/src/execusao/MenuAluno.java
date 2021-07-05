@@ -62,6 +62,9 @@ public class MenuAluno {
                         case ListaAlunos:
                             listaAlunos();
                             break;
+                        case ListarDisciplinasDoAluno:
+                            listarDisciplinaAlunos();
+                            break;
                     }
                 }catch (NegocioException ex){
                     System.out.println("Operacao nao realizada corretamente - "+ex.getMessage());
@@ -250,7 +253,22 @@ public class MenuAluno {
         }
         return alunoTemp;
     }
+    public void listarDisciplinaAlunos()throws NegocioException{
+        List listaAlunos = new ArrayList();
+      
+        List <AlunoVO> lista = alunoNegocio.listaTodosAlunos();     
+        for( AlunoVO aluno : lista){
+              listaAlunos.add(aluno.getNome());                 
+        }               
 
+        try{
+            String aluno = (String)JOptionPane.showInputDialog(null, "Forneca o nome do aluno","Alunos", JOptionPane.QUESTION_MESSAGE, null,listaAlunos.toArray(), listaAlunos.toArray()[0]);   
+            alunoNegocio.listaAlunoeDisciplina(aluno);
+        }catch (Exception ex){
+            System.out.println("Digitacao inconsistente - " +ex.getMessage());
+        }
+
+    }
     private static AlunoVO lerDados() throws NegocioException{
         AlunoVO alunoTemp = new AlunoVO();
         return lerDados(alunoTemp);

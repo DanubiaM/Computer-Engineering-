@@ -8,5 +8,6 @@ public enum EnumMenuAluno {
     PesqMatricula,
     PesqNome,
     ListaAlunos,
+    ListarDisciplinasDoAluno,
     Sair
 }
