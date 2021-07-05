@@ -214,5 +214,28 @@ public String obterNomeGrupoCurso(int cod) throws PersistenciaException{
         return alunosCadastrados;
     }
     
+    public void listaAlunoDisciplina(String nome) throws PersistenciaException{
+        
+        
+        PreparedStatement comando = null;
+        try{
+            
+            comando = conexao.getConexao().prepareStatement("SELECT Aluno.nome as nomeAluno, Aluno.matricula, Disciplina.codigo, Disciplina.nome as nomeDisciplina\n" +
+            "FROM Aluno INNER JOIN Disciplina ON Aluno.curso = Disciplina.curso WHERE UPPER(Aluno.nome)  LIKE '?%'");
+            comando.setString(1, nome.toUpperCase());         
+            ResultSet rs = comando.executeQuery();            
+            System.out.println(">>>LISTA DE DISCIPLINAS DO ALUNO "+nome.toUpperCase()+"<<<");
+            while(rs.next()){
+                System.out.println("Matricula.................:"+rs.getInt("matricula"));
+                System.out.println("Nome do aluno.............:"+rs.getString("nomealuno"));
+                System.out.println("Código da Disciplina......:"+rs.getInt("codigo"));
+                System.out.println("Nome da Disciplina........:"+rs.getString("nomedisciplina"));
+                System.out.println(".......................................");
+            }
+            comando.close();
+        }catch(SQLException ex){
+            throw new PersistenciaException("Erro ao acessar disciplinas do aluno");
+        }
+    } 
 }
 
