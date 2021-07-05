@@ -236,8 +236,7 @@ public String obterNomeGrupoCurso(int cod) throws PersistenciaException{
         try{
             
             comando = conexao.getConexao().prepareStatement("SELECT Aluno.nome as nomeAluno, Aluno.matricula, Disciplina.codigo, Disciplina.nome as nomeDisciplina\n" +
-            "FROM Aluno INNER JOIN Disciplina ON Aluno.curso = Disciplina.curso WHERE UPPER(Aluno.nome)  LIKE '?%'");
-            comando.setString(1, nome.toUpperCase());         
+            "FROM Aluno INNER JOIN Disciplina ON Aluno.curso = Disciplina.curso WHERE UPPER(Aluno.nome)  LIKE '"+nome.toUpperCase().trim()+"%'");        
             ResultSet rs = comando.executeQuery();            
             System.out.println(">>>LISTA DE DISCIPLINAS DO ALUNO "+nome.toUpperCase()+"<<<");
             while(rs.next()){
