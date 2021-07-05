@@ -161,5 +161,26 @@ public class CursoDAO extends DAO{
             return curso;
     }
 
-           
+     public void listaCursoAluno(String curso) throws PersistenciaException{
+        
+        String sqlcommand = null;
+        PreparedStatement comando = null;
+        try{
+            
+            comando = conexao.getConexao().prepareStatement("SELECT  Aluno.nome as nomeAluno, Aluno.matricula , Curso.codigo, Curso.nome as nomeCurso FROM Aluno INNER JOIN Curso ON codigo = curso WHERE upper(Curso.nome) = ?");
+            comando.setString(1, curso.toUpperCase());         
+            ResultSet rs = comando.executeQuery();            
+            System.out.println(">>>LISTA DE ALUNOS DO CURSO DE "+curso.toUpperCase()+"<<<");
+            while(rs.next()){
+                System.out.println("Codigo do Curso...........:"+rs.getInt("codigo"));
+                System.out.println("Nome do curso.............:"+rs.getString("nomecurso"));
+                System.out.println("Matricula.................:"+rs.getInt("matricula"));
+                System.out.println("Nome......................:"+rs.getString("nomealuno"));
+                System.out.println(".......................................");
+            }
+            comando.close();
+        }catch(SQLException ex){
+            throw new PersistenciaException("Erro ao acessar alunos do curso");
+        }
+    }      
 }
