@@ -18,5 +18,6 @@ public enum EnumMenuCurso {
     PesqNome,
     ListaCursos,
     ListarAlunosDoCurso,
+    ListarDisciplinasDoCurso,
     Sair
 }
