@@ -56,6 +56,9 @@ public class MenuCurso {
                         case ListarAlunosDoCurso:
                             listarAlunosCurso();
                             break;
+                        case ListarDisciplinasDoCurso:
+                            listarDisciplinasCurso();
+                            break;
                     }
                 }catch (NegocioException ex){
                     System.out.println("Operacao nao realizada corretamente - "+ex.getMessage());
@@ -184,6 +187,23 @@ public class MenuCurso {
         }
 
     }
+
+    public void listarDisciplinasCurso()throws NegocioException{
+            List listaCursos = new ArrayList();
+
+            List <CursoVO> lista = cursoNegocio.listaCursos();     
+            for( CursoVO cursos : lista){
+                  listaCursos.add(cursos.getNome());                 
+            }               
+
+            try{
+                String curso = (String)JOptionPane.showInputDialog(null, "Forneca o nome do curso","Cursos", JOptionPane.QUESTION_MESSAGE, null,listaCursos.toArray(), listaCursos.toArray()[0]);   
+                cursoNegocio.listaCursoeDisciplina(curso);
+            }catch (Exception ex){
+                System.out.println("Digitacao inconsistente - " +ex.getMessage());
+            }
+
+        }
 
     //Impressao de Dados
     public void mostrarDados(CursoVO cursoVO){
