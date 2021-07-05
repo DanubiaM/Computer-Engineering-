@@ -86,6 +86,15 @@ public class CursoNegocio {
         }
 
     }
+ public void listaCursoeAluno(String curso) throws NegocioException{
+        try{
+             cursoDAO.listaCursoAluno(curso);
+
+        }catch (PersistenciaException ex){
+            throw new NegocioException("Erro ao pesquisar o curso - "+ex.getMessage());
+        }
+
+    }
     public List<CursoVO> listaCursos() throws NegocioException{
             try{
                 return cursoDAO.listaCursos();
