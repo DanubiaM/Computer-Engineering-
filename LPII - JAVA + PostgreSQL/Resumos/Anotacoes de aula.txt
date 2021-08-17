@@ -1,0 +1,30 @@
+SOLICITAR DADOS DE UM DB
+
+Podemos inserir, alterar, excluir e recuperar dados de uma tabela.
+
+-O Connection faz uma conexão  ao banco de dados, retornado pelo DriverManager
+
+STATEMENT
+- Statement é uma classe para disparar instruções sql ao banco de dados;
+- A instancia de statement é obtida atraves con.createStatement(), possibilitando disparar
+comandos sql ao DB. Exemplo de comandos/metodos: Execute(), executeQuery(), executeBatch() e executeUpdate();
+
+	PreparedStatement
+	-A subinterface PreparedStatement executa  comandos sql com pré-compilação e parametros.
+	-É uma subclasse do JDBC
+	-Pré compila comandos SQL com maior eficiencia
+	- A String com a intrução SQL é preparada previamente, deixa o ? no lugar de parametros
+	- É uma forma de organizar melhor os comandos
+	- Só precisa preparar o Statement uma vez. Usando o script para alterar os dados varias vezes.
+	
+OBJETO ResultSet
+	-Usa para fazer consultas.
+	- Toda vez que disparar o scrip select, vai retornar um objeto do tipo ResultSet.
+	- É uma tabela virtual.
+	- Podemos caminhar dentro da tabela. Atraves dos comandos next(), previous(), absolute(), first(), last().
+	- Uma vez posicionado na linha que deseja, podemos usar os metodos gets para retornar o dado. getXXX();
+	Sendo XXX o tipo de dado.
+
+***
+É iportante apos o uso dos objetos Connection, Statement e ResultSet realizar o fechamento da conexao com o JDBC.
+Para isso use o nome do objeto criado e .close: conexao.close(), statement.clsoe, reseultset.close().
