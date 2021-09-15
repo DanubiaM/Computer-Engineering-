@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "956359666567",
+    "project_id": "econaulas",
+    "storage_bucket": "econaulas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956359666567:android:d56109eb2638c3d835c122",
+        "android_client_info": {
+          "package_name": "br.com.app.econ_aulas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956359666567-1ntgbssa16cnmk2crfsgen9une01ieh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7OsOADujujGi0FawgnSjou83IK702UoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956359666567-1ntgbssa16cnmk2crfsgen9une01ieh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
