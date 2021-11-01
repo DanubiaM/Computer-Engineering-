@@ -18,17 +18,19 @@ class HomePageState extends State<HomePage> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text('Home Page')),
-      body: Center(
-          child: GestureDetector(
-        child: Text('Contador: $counter', style: TextStyle(fontSize: 20)),
-        onTap: () {
-          //Método para inserir valores que serão modificados
-          setState(() {
-            counter++;
-          });
-          print(counter);
-        },
-      )),
+      body: Container(
+        height: 200,
+        width: 200,
+        color: Colors.black,
+        child: Center(
+          //alignment: Alignment.center,
+          child: Container(
+            height: 100,
+            width: 100,
+            color: Colors.blue,
+          ),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {

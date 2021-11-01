@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-// inicializar a instancia do firebase localmente
-
-FirebaseFirestore firestore = FirebaseFirestore.instance;
+FirebaseFirestore _firestore = FirebaseFirestore.instance;
+CollectionReference _reference = _firestore.collection("academico");
 
 class Database {}
