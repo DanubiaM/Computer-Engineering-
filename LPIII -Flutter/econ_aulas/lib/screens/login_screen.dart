@@ -1,6 +1,8 @@
 import 'package:econ_aulas/models/database.dart';
 import 'package:flutter/material.dart'; //disponibiliza todos os componentes
 import 'package:firebase_core/firebase_core.dart';
+
+import 'crud_screen.dart';
 //'stf' starefull ja cria automaticamente
 
 class LoginScreen extends StatefulWidget {
@@ -47,6 +49,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ElevatedButton(
                       onPressed: () {
                         Database.userId = _userIdController.text;
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => CrudScreen()));
                         debugPrint("${_userIdController.text} log in");
                       },
                       child: Text("Log In"))
