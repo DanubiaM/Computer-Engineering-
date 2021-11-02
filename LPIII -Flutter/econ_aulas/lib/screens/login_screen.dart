@@ -20,36 +20,38 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 200,
+      body: FutureBuilder(
+          future: _initializerFirebase(),
+          builder: (context, snapshot) {
+            return Form(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 200,
+                  ),
+                  Text(widget.title),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20.0, vertical: 10),
+                    child: TextFormField(
+                      //Todo conteudo deste Form estara vinculado a variavel do controller "_userIdController"
+                      controller: _userIdController,
+                      style: TextStyle(color: Colors.lightBlue[900]),
+                      decoration: InputDecoration(
+                          labelStyle: TextStyle(color: Colors.blue),
+                          labelText: "User name",
+                          hintText: "Please, write your ID"),
+                    ),
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        debugPrint("${_userIdController.text} log in");
+                      },
+                      child: Text("Log In"))
+                ],
               ),
-              Text(widget.title),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-                child: TextFormField(
-                  //Todo conteudo deste Form estara vinculado a variavel do controller "_userIdController"
-                  controller: _userIdController,
-                  style: TextStyle(color: Colors.lightBlue[900]),
-                  decoration: InputDecoration(
-                      labelStyle: TextStyle(color: Colors.blue),
-                      labelText: "User name",
-                      hintText: "Please, write your ID"),
-                ),
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    debugPrint("${_userIdController.text} log in");
-                  },
-                  child: Text("Log In"))
-            ],
-          ),
-        ),
-      ),
+            );
+          }),
     );
   }
 
