@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-          future: _initializerFirebase(),
+          future: Database.initializerFirebase(),
           builder: (context, snapshot) {
             return Form(
               child: Column(
@@ -59,11 +59,5 @@ class _LoginScreenState extends State<LoginScreen> {
             );
           }),
     );
-  }
-
-  //inicializado base de dados de forma assincrona, podendo executar outros apps ao mesmo tempo que busca no bd
-  Future<FirebaseApp> _initializerFirebase() async {
-    FirebaseApp firebaseApp = await Firebase.initializeApp();
-    return firebaseApp;
   }
 }
