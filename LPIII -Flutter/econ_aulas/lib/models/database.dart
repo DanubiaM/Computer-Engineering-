@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 //FirebaseFirestore permite acesso aos dados do banco firebase
 FirebaseFirestore _firestore = FirebaseFirestore.instance; //instanciando
@@ -9,7 +10,7 @@ class Database {
   static late String userId;
 
   //metodo para adicionar dados no firebase
-  addStudent(String name, String socialMedia, String sexo, int age) {
+  addStudent(String name, String socialMedia, String sexo, int age) async {
     //Dentro da coleção temos um documento que se chamara userId
     DocumentReference documentReference =
         _reference.doc(userId).collection('students').doc();
@@ -22,6 +23,14 @@ class Database {
       "age": age,
     };
 
-    documentReference.set(data).whenComplete(() => print("Student saved!"));
+    await documentReference
+        .set(data)
+        .whenComplete(() => print("Student saved!"));
+  }
+
+  //inicializado base de dados de forma assincrona, podendo executar outros apps ao mesmo tempo que busca no bd
+  static Future<FirebaseApp> initializerFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
   }
 }
