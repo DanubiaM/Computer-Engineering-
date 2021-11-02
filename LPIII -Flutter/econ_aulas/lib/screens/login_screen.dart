@@ -1,3 +1,4 @@
+import 'package:econ_aulas/models/database.dart';
 import 'package:flutter/material.dart'; //disponibiliza todos os componentes
 import 'package:firebase_core/firebase_core.dart';
 //'stf' starefull ja cria automaticamente
@@ -45,6 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   ElevatedButton(
                       onPressed: () {
+                        Database.userId = _userIdController.text;
                         debugPrint("${_userIdController.text} log in");
                       },
                       child: Text("Log In"))
