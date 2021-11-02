@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 //FirebaseFirestore permite acesso aos dados do banco firebase
 FirebaseFirestore _firestore = FirebaseFirestore.instance; //instanciando
+//referencia da coleção chamado academico
 CollectionReference _reference = _firestore.collection("academico");
 
 class Database {
@@ -9,6 +10,7 @@ class Database {
 
   //metodo para adicionar dados no firebase
   addStudent(String name, String socialMedia, String sexo, int age) {
+    //Dentro da coleção temos um documento que se chamara userId
     DocumentReference documentReference =
         _reference.doc(userId).collection('students').doc();
 
