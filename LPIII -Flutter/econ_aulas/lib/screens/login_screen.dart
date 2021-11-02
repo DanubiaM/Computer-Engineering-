@@ -24,6 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
+          //FutureBuilder retorna form apenas quando future acontecer -> inicializa bd
           future: Database.initializerFirebase(),
           builder: (context, snapshot) {
             return Form(
