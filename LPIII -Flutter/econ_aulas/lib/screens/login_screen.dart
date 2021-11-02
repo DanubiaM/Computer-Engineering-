@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart'; //disponibiliza todos os componentes
-
+import 'package:firebase_core/firebase_core.dart';
 //'stf' starefull ja cria automaticamente
 
 class LoginScreen extends StatefulWidget {
@@ -51,5 +51,11 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  //inicializado base de dados de forma assincrona, podendo executar outros apps ao mesmo tempo que busca no bd
+  Future<FirebaseApp> _initializerFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
   }
 }
