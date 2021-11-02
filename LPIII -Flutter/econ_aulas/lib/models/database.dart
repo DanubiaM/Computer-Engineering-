@@ -6,7 +6,7 @@ FirebaseFirestore _firestore = FirebaseFirestore.instance; //instanciando
 CollectionReference _reference = _firestore.collection("academico");
 
 class Database {
-  late String userId;
+  static late String userId;
 
   //metodo para adicionar dados no firebase
   addStudent(String name, String socialMedia, String sexo, int age) {
