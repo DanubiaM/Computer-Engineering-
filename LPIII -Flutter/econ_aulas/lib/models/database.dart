@@ -28,6 +28,12 @@ class Database {
         .whenComplete(() => print("Student saved!"));
   }
 
+  Stream<QuerySnapshot> studentsList() {
+    CollectionReference studentsCollection =
+        _reference.doc(userId).collection('students');
+    return studentsCollection.snapshots();
+  }
+
   //inicializado base de dados de forma assincrona, podendo executar outros apps ao mesmo tempo que busca no bd
   static Future<FirebaseApp> initializerFirebase() async {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
