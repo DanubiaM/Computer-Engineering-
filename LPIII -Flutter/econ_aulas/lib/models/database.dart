@@ -11,7 +11,12 @@ class Database {
 
   //metodo para adicionar dados no firebase
   static addStudent(
-      String name, String socialMedia, String sexo, int age) async {
+      {
+      //required faz com que seja aceitado valores nullable
+      required String name,
+      required String socialMedia,
+      required String sexo,
+      required int age}) async {
     //Dentro da coleção temos um documento que se chamara userId
     DocumentReference documentReference =
         _reference.doc(userId).collection('students').doc();
