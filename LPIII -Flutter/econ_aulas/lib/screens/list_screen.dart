@@ -8,8 +8,11 @@ class ListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-        stream: Database.studentsList(),
-        builder: (context, snapshot) {
+      stream: Database.studentsList(),
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Text("There is no data in the database.");
+        } else if (snapshot.hasData || snapshot.data != null) {
           return ListView.separated(
             //Docs pode retornar nulo, logo é adicionado !, garantido que caso nao tenha nada apareça nada mas nao deê erro
             itemCount: snapshot.data!.docs.length,
@@ -27,6 +30,9 @@ class ListScreen extends StatelessWidget {
               );
             },
           );
-        });
+        } else
+          return Container();
+      },
+    );
   }
 }
