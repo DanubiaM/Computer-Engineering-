@@ -1,3 +1,4 @@
+import 'package:econ_aulas/screens/list_screen.dart';
 import 'package:flutter/material.dart';
 
 class CrudScreen extends StatelessWidget {
@@ -10,9 +11,7 @@ class CrudScreen extends StatelessWidget {
         centerTitle: true,
         title: Text("Academy system"),
       ),
-      body: Container(
-        child: Center(child: Text("List")),
-      ),
+      body: ListScreen(),
     );
   }
 }
