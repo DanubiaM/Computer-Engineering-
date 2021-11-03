@@ -28,7 +28,7 @@ class Database {
         .whenComplete(() => print("Student saved!"));
   }
 
-  Stream<QuerySnapshot> studentsList() {
+  static Stream<QuerySnapshot> studentsList() {
     CollectionReference studentsCollection =
         _reference.doc(userId).collection('students');
     return studentsCollection.snapshots();
