@@ -10,7 +10,8 @@ class Database {
   static late String userId;
 
   //metodo para adicionar dados no firebase
-  addStudent(String name, String socialMedia, String sexo, int age) async {
+  static addStudent(
+      String name, String socialMedia, String sexo, int age) async {
     //Dentro da coleção temos um documento que se chamara userId
     DocumentReference documentReference =
         _reference.doc(userId).collection('students').doc();
