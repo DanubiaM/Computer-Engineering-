@@ -23,6 +23,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(widget.title),
+      ),
       body: FutureBuilder(
           //FutureBuilder retorna form apenas quando future acontecer -> inicializa bd
           future: Database.initializerFirebase(),
@@ -31,9 +35,12 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 200,
+                    height: 150,
                   ),
-                  Text(widget.title),
+                  Text(
+                    widget.title,
+                    style: TextStyle(fontSize: 25),
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20.0, vertical: 10),
