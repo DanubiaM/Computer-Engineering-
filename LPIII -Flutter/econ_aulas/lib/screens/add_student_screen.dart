@@ -59,7 +59,9 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
                   name: _controllerName.text,
                   socialMedia: _controllerSocialMedia.text,
                   sexo: _controllerSexo.text,
-                  age: int.parse(_controllerAge.text),
+                  age: _controllerAge.text.isEmpty
+                      ? null
+                      : int.parse(_controllerAge.text),
                 );
                 //Volta para a tela anterior ao clicar no botão
                 Navigator.of(context).pop();
