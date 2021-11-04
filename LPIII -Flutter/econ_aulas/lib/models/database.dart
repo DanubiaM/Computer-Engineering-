@@ -45,4 +45,18 @@ class Database {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
     return firebaseApp;
   }
+
+  static Future<void> updateStudent(
+      dynamic docId, String name, String socialMedia) async {
+    DocumentReference documentReference =
+        _reference.doc(userId).collection("students").doc(docId);
+
+    Map<String, dynamic> data = <String, dynamic>{
+      "name": name,
+      "socialMedia": socialMedia,
+    };
+    await documentReference
+        .update(data)
+        .whenComplete(() => print("Sucess update students!"));
+  }
 }
