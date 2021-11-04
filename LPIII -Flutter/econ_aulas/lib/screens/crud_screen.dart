@@ -11,10 +11,11 @@ class CrudScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Academy system"),
+        title: Text("Academy System"),
       ),
       body: ListScreen(),
       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
         onPressed: () {
           //push permite voltar para a pagina anterior
           Navigator.of(context).push(
