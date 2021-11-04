@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:econ_aulas/models/database.dart';
+import 'package:econ_aulas/screens/edit_screen.dart';
 import 'package:flutter/material.dart';
 
 class ListScreen extends StatelessWidget {
@@ -24,13 +25,18 @@ class ListScreen extends StatelessWidget {
               String name = snapshot.data!.docs[index].get('name');
               String socialMedia =
                   snapshot.data!.docs[index].get('socialMedia');
-              String sexo = snapshot.data!.docs[index].get('sexo');
-              int age = snapshot.data!.docs[index].get('age');
+              // String sexo = snapshot.data!.docs[index].get('sexo');
+              // int age = snapshot.data!.docs[index].get('age');
               return ListTile(
                 title: Text(name),
                 subtitle: Text(socialMedia),
-                trailing: Text(sexo),
-                leading: Text(age.toString()),
+                // trailing: Text(sexo),
+                //  leading: Text(age.toString()),
+
+                //Encaminha para outra tela ao clicar no campo ListTile
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => EditScreen(
+                        id: docId, name: name, socialMedia: socialMedia))),
               );
             },
           );
