@@ -11,9 +11,12 @@ class AddStudentScreen extends StatefulWidget {
 class _AddStudentScreenState extends State<AddStudentScreen> {
   TextEditingController _controllerName = TextEditingController();
   TextEditingController _controllerSocialMedia = TextEditingController();
+  TextEditingController _controllerSexo = TextEditingController();
+  TextEditingController _controllerAge = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    print(_controllerAge);
     return Scaffold(
       backgroundColor: Colors.limeAccent[50],
       body: Form(
@@ -36,16 +39,33 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
                   labelStyle: TextStyle(color: Colors.blue),
                   hintText: 'Please, enter with your social media'),
             ),
-            SizedBox(
-              height: 40,
+            TextFormField(
+              controller: _controllerSexo,
+              decoration: InputDecoration(
+                  labelText: "Sex",
+                  labelStyle: TextStyle(color: Colors.blue),
+                  hintText: 'Please, enter with your sex'),
+            ),
+            TextFormField(
+              controller: _controllerAge,
+              decoration: InputDecoration(
+                  labelText: "Age",
+                  labelStyle: TextStyle(color: Colors.blue),
+                  hintText: 'Please, enter with your age'),
             ),
             ElevatedButton(
               onPressed: () {
                 Database.addStudent(
-                    name: _controllerName.text,
-                    socialMedia: _controllerSocialMedia.text);
+                  name: _controllerName.text,
+                  socialMedia: _controllerSocialMedia.text,
+                  sexo: _controllerSexo.text,
+                  age: int.parse(_controllerAge.text),
+                );
                 //Volta para a tela anterior ao clicar no botão
                 Navigator.of(context).pop();
+                SizedBox(
+                  height: 35,
+                );
               },
               child: Text("Add"),
             )
