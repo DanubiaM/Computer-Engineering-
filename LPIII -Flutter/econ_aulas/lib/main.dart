@@ -1,7 +1,16 @@
 import 'package:econ_aulas/screens/login_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+/*
+  Trecho para inicilizar o banco de dados no firebase
+  e executar o app.
+ */
+
+  WidgetsFlutterBinding.ensureInitialized();
+  //await permite comandos não sincronizados
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -14,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Engenharia da Computação',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: const LoginScreen(title: 'CRUD - ACADEMY'),
     );
