@@ -1,0 +1,9 @@
+/* Jason Project */
+
+MAS teste {
+
+    infrastructure: Centralised
+
+    agents:agenteteste;
+}
+

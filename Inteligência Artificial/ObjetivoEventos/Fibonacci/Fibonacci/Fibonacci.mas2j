@@ -1,0 +1,9 @@
+/* Jason Project */
+
+MAS fibonacci {
+
+    infrastructure: Centralised
+
+    agents: fibonacci;
+}
+

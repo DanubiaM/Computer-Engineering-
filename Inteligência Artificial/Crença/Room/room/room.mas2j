@@ -1,0 +1,11 @@
+/* Jason Project */
+
+MAS room {
+
+    infrastructure: Centralised
+
+    agents:
+	claustrofobico;
+	paranoico;
+}
+

@@ -1,0 +1,9 @@
+/* Jason Project */
+
+MAS despertador {
+
+    infrastructure: Centralised
+
+    agents: relogio;
+}
+

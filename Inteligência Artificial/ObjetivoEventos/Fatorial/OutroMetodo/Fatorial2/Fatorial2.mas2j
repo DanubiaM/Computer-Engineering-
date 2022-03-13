@@ -1,0 +1,9 @@
+/* Jason Project */
+
+MAS fatorial2 {
+
+    infrastructure: Centralised
+
+    agents: fatorial2;
+}
+
