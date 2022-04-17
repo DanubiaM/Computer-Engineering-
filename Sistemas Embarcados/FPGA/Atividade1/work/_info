@@ -1,0 +1,55 @@
+m255
+K4
+z2
+!s11f vlog 2021.1 2021.02, Feb  3 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_pro/21.2
+vatv1
+Z0 !s110 1650223224
+!i10b 1
+!s100 ;9Kl1O41=cjAA]46KNSN>0
+Ih9gzS>4Zemh]_hYY`5=D>1
+Z1 dD:/Sistemas Embarcados/Atividade1
+w1650223127
+8D:/Sistemas Embarcados/Atividade1/atv1.v
+FD:/Sistemas Embarcados/Atividade1/atv1.v
+!i122 0
+L0 2 20
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OV;L;2021.1;73
+r1
+!s85 0
+31
+Z4 !s108 1650223224.000000
+!s107 D:/Sistemas Embarcados/Atividade1/atv1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Sistemas Embarcados/Atividade1/atv1.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vatv1_tb
+R0
+!i10b 1
+!s100 BbXfW9HBclU4GRkU2F8ET0
+IH:=_n5S3JO^zi=f=OoCza3
+R1
+w1650223215
+8D:/Sistemas Embarcados/Atividade1/atv_tb.v
+FD:/Sistemas Embarcados/Atividade1/atv_tb.v
+!i122 1
+L0 1 23
+R2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Sistemas Embarcados/Atividade1/atv_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Sistemas Embarcados/Atividade1/atv_tb.v|
+!i113 1
+R5
+R6

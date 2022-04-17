@@ -1,0 +1,55 @@
+m255
+K4
+z2
+!s11f vlog 2021.1 2021.02, Feb  3 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Sistemas Embarcados/Atividade2
+vatv3
+Z0 !s110 1650225243
+!i10b 1
+!s100 b;6>gSRS7Mf]lH;i:z69S3
+IA>J[oC;S<UBo98VPgz8W?0
+Z1 dD:/Sistemas Embarcados/Atividade3
+w1650224669
+8D:/Sistemas Embarcados/Atividade3/atv3.v
+FD:/Sistemas Embarcados/Atividade3/atv3.v
+!i122 2
+L0 1 21
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OV;L;2021.1;73
+r1
+!s85 0
+31
+Z4 !s108 1650225243.000000
+!s107 D:/Sistemas Embarcados/Atividade3/atv3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Sistemas Embarcados/Atividade3/atv3.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vatv3_tb
+R0
+!i10b 1
+!s100 ;KHXMJ]<]NQ1b]CL]Z_@z3
+I1:WKZ8f:=Y3nOaPNM84M<0
+R1
+w1650225237
+8D:/Sistemas Embarcados/Atividade3/atv3_tb.v
+FD:/Sistemas Embarcados/Atividade3/atv3_tb.v
+!i122 3
+L0 1 27
+R2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Sistemas Embarcados/Atividade3/atv3_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Sistemas Embarcados/Atividade3/atv3_tb.v|
+!i113 1
+R5
+R6
