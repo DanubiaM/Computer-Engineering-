@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VariablesExchangeFile>
+	<fileHeader company="Schneider Automation" product="Unity Pro M V5.0 - 100504A" dateTime="date_and_time#2022-8-31-9:16:12" content="Variable source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.4" dateTime="date_and_time#1980-1-4-5:8:34"></contentHeader>
+	<dataBlock>
+		<variables name="K1" typeName="EBOOL" topologicalAddress="%Q0.2.0"></variables>
+		<variables name="K2" typeName="EBOOL" topologicalAddress="%Q0.2.1"></variables>
+		<variables name="K3" typeName="EBOOL" topologicalAddress="%Q0.2.2"></variables>
+		<variables name="K4" typeName="EBOOL" topologicalAddress="%Q0.2.3"></variables>
+		<variables name="K5" typeName="EBOOL" topologicalAddress="%Q0.2.4"></variables>
+		<variables name="B0" typeName="EBOOL" topologicalAddress="%I0.1.0"></variables>
+		<variables name="B0sup" typeName="EBOOL" topologicalAddress="%M0"></variables>
+		<variables name="B1" typeName="EBOOL" topologicalAddress="%I0.1.2"></variables>
+		<variables name="B1sup" typeName="EBOOL" topologicalAddress="%M1"></variables>
+		<variables name="L1" typeName="EBOOL" topologicalAddress="%Q0.2.5"></variables>
+		<variables name="L2" typeName="EBOOL" topologicalAddress="%Q0.2.6"></variables>
+		<variables name="B2" typeName="EBOOL" topologicalAddress="%I0.1.4"></variables>
+		<variables name="B2sup" typeName="EBOOL" topologicalAddress="%M2"></variables>
+		<variables name="L3" typeName="EBOOL" topologicalAddress="%Q0.2.7"></variables>
+		<variables name="K1sup" typeName="EBOOL" topologicalAddress="%M10"></variables>
+		<variables name="K2sup" typeName="EBOOL" topologicalAddress="%M11"></variables>
+		<variables name="L1sup" typeName="EBOOL" topologicalAddress="%M22"></variables>
+		<variables name="L2sup" typeName="EBOOL" topologicalAddress="%M23"></variables>
+		<variables name="L3sup" typeName="EBOOL" topologicalAddress="%M24"></variables>
+		<variables name="K3sup" typeName="EBOOL" topologicalAddress="%M12"></variables>
+		<variables name="K4sup" typeName="EBOOL" topologicalAddress="%M13"></variables>
+		<variables name="K5sup" typeName="EBOOL" topologicalAddress="%M14"></variables>
+		<variables name="Bit1" typeName="EBOOL" topologicalAddress="%M50"></variables>
+		<variables name="T1" typeName="TON"></variables>
+		<variables name="T2" typeName="TON"></variables>
+	</dataBlock>
+</VariablesExchangeFile>

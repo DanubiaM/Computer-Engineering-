@@ -1,0 +1,28 @@
+[Exception] CacheFile Load [27/07/2022 10:09:34]
+    System.IO.FileNotFoundException: Não foi possível localizar o arquivo 'C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Supervisorio\Turma_2022_2\Database\Variaveis_2022_2TagIntegrationCache.xmlti'.
+Nome do arquivo: 'C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Supervisorio\Turma_2022_2\Database\Variaveis_2022_2TagIntegrationCache.xmlti'
+   em System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   em System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   em System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   em TagSourceLibrary.CacheFile.()
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis_2022_2.XSY read. [27/07/2022 10:09:44]
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis_2022_2.XSY read. [27/07/2022 10:26:17]
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis_2022_2.XSY read. [04/01/1980 01:34:02]
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis_2022_2.XSY read. [04/01/1980 01:35:33]
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis_2022_2.XSY read. [04/01/1980 01:36:26]
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis_2022_2.XSY read. [31/08/2022 08:58:07]
+[Exception] AddImportedTag [31/08/2022 09:09:22]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em ..AddImportedTag(String , String , String , Int32 , Int32 , String , String )
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis31082022.XSY read. [31/08/2022 09:33:35]
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis31082022.XSY read. [14/09/2022 07:30:45]
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis31082022.XSY read. [14/09/2022 09:49:20]
+[Exception] AddImportedTag [14/09/2022 10:05:12]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em ..AddImportedTag(String , String , String , Int32 , Int32 , String , String )
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis31082022.XSY read. [04/01/1980 02:12:48]
+[Message] File C:\Users\Lab32-x\Documents\ASP2022-2 - Danubia\Variaveis31082022.XSY read. [28/09/2022 09:48:14]

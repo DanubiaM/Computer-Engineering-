@@ -1,0 +1,6 @@
+[Exception] Synchronizing [31/08/2022 08:58:07]
+    System.InvalidOperationException: Coleção foi modificada; talvez a operação de enumeração não seja executada.
+   em System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.ValueCollection.Enumerator.MoveNext()
+   em TagSourceLibrary.Comparison.TagsDatabaseSync.GetDifferences()
+   em TagSourceLibrary.TagsSourceBase.(Object )

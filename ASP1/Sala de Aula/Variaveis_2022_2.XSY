@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VariablesExchangeFile>
+	<fileHeader company="Schneider Automation" product="Unity Pro M V5.0 - 100504A" dateTime="date_and_time#2022-7-27-10:26:12" content="Variable source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.000"></contentHeader>
+	<dataBlock>
+		<variables name="K1" typeName="EBOOL" topologicalAddress="%Q0.2.0"></variables>
+		<variables name="K2" typeName="EBOOL" topologicalAddress="%Q0.2.1"></variables>
+		<variables name="K3" typeName="EBOOL" topologicalAddress="%Q0.2.2"></variables>
+		<variables name="K4" typeName="EBOOL" topologicalAddress="%Q0.2.3"></variables>
+		<variables name="K5" typeName="EBOOL" topologicalAddress="%Q0.2.4"></variables>
+		<variables name="B0" typeName="EBOOL" topologicalAddress="%I0.1.0"></variables>
+		<variables name="B0sup" typeName="EBOOL" topologicalAddress="%M0"></variables>
+		<variables name="B1" typeName="EBOOL" topologicalAddress="%I0.1.1"></variables>
+		<variables name="B1sup" typeName="EBOOL" topologicalAddress="%M1"></variables>
+		<variables name="L1" typeName="EBOOL" topologicalAddress="%Q0.2.5"></variables>
+		<variables name="L2" typeName="EBOOL" topologicalAddress="%Q0.2.6"></variables>
+		<variables name="Motor1" typeName="Chave_PDR"></variables>
+		<variables name="B2" typeName="BOOL" topologicalAddress="%I0.1.2"></variables>
+		<variables name="B2sup" typeName="BOOL" topologicalAddress="%M2"></variables>
+		<variables name="L3" typeName="BOOL" topologicalAddress="%Q0.2.7"></variables>
+		<variables name="K1sup" typeName="EBOOL" topologicalAddress="%M10"></variables>
+		<variables name="K2sup" typeName="EBOOL" topologicalAddress="%M11"></variables>
+		<variables name="L1sup" typeName="EBOOL" topologicalAddress="%M12"></variables>
+		<variables name="L2sup" typeName="EBOOL" topologicalAddress="%M13"></variables>
+		<variables name="L3sup" typeName="EBOOL" topologicalAddress="%M14"></variables>
+	</dataBlock>
+	<FBSource nameOfFBType="Chave_PDR" version="0.01" dateTime="dt#???">
+		<attribute name="TypeProtectionLevel" value="2#0000_0000"></attribute>
+		<inputParameters>
+			<variables name="B0x" typeName="BOOL">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="B0Supx" typeName="BOOL">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="B1x" typeName="BOOL">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="B1Supx" typeName="BOOL">
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="B2x" typeName="BOOL">
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="B2Supx" typeName="BOOL">
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="K1x" typeName="BOOL">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="K2x" typeName="BOOL">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="L1x" typeName="BOOL">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="L2x" typeName="BOOL">
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="L3x" typeName="BOOL">
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+		</outputParameters>
+		<privateLocalVariables></privateLocalVariables>
+		<FBProgram name="Logica1">
+			<LDSource nbColumns="11">
+				<networkLD>
+					<typeLine>
+						<emptyLine nbRows="3"></emptyLine>
+					</typeLine>
+					<typeLine>
+						<shortCircuit>
+							<VLink></VLink>
+							<HLink nbCells="1"></HLink>
+						</shortCircuit>
+						<shortCircuit>
+							<VLink></VLink>
+							<contact typeContact="openContact" contactVariableName="B1x"></contact>
+						</shortCircuit>
+						<contact typeContact="closedContact" contactVariableName="B0x"></contact>
+						<contact typeContact="closedContact" contactVariableName="B0Supx"></contact>
+						<contact typeContact="closedContact" contactVariableName="K2x"></contact>
+						<HLink nbCells="3"></HLink>
+						<coil typeCoil="coil" coilVariableName="K1x"></coil>
+						<HLink nbCells="2"></HLink>
+					</typeLine>
+					<typeLine>
+						<VLink></VLink>
+						<shortCircuit>
+							<VLink></VLink>
+							<contact typeContact="openContact" contactVariableName="B1Supx"></contact>
+						</shortCircuit>
+						<emptyCell nbCells="9"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<emptyCell nbCells="1"></emptyCell>
+						<contact typeContact="openContact" contactVariableName="K1x"></contact>
+						<emptyCell nbCells="9"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<emptyLine nbRows="1"></emptyLine>
+					</typeLine>
+					<typeLine>
+						<shortCircuit>
+							<VLink></VLink>
+							<HLink nbCells="1"></HLink>
+						</shortCircuit>
+						<shortCircuit>
+							<VLink></VLink>
+							<contact typeContact="openContact" contactVariableName="B2x"></contact>
+						</shortCircuit>
+						<contact typeContact="closedContact" contactVariableName="B0x"></contact>
+						<contact typeContact="closedContact" contactVariableName="B0Supx"></contact>
+						<contact typeContact="closedContact" contactVariableName="K1x"></contact>
+						<HLink nbCells="3"></HLink>
+						<coil typeCoil="coil" coilVariableName="K2x"></coil>
+						<HLink nbCells="2"></HLink>
+					</typeLine>
+					<typeLine>
+						<VLink></VLink>
+						<shortCircuit>
+							<VLink></VLink>
+							<contact typeContact="openContact" contactVariableName="B2Supx"></contact>
+						</shortCircuit>
+						<emptyCell nbCells="9"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<emptyCell nbCells="1"></emptyCell>
+						<contact typeContact="openContact" contactVariableName="K2x"></contact>
+						<emptyCell nbCells="9"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<emptyLine nbRows="1"></emptyLine>
+					</typeLine>
+					<typeLine>
+						<HLink nbCells="1"></HLink>
+						<contact typeContact="openContact" contactVariableName="K1x"></contact>
+						<HLink nbCells="6"></HLink>
+						<coil typeCoil="coil" coilVariableName="L1x"></coil>
+						<HLink nbCells="2"></HLink>
+					</typeLine>
+					<typeLine>
+						<HLink nbCells="1"></HLink>
+						<contact typeContact="openContact" contactVariableName="K2x"></contact>
+						<HLink nbCells="6"></HLink>
+						<coil typeCoil="coil" coilVariableName="L2x"></coil>
+						<HLink nbCells="2"></HLink>
+					</typeLine>
+					<typeLine>
+						<HLink nbCells="1"></HLink>
+						<contact typeContact="closedContact" contactVariableName="K2x"></contact>
+						<contact typeContact="closedContact" contactVariableName="K1x"></contact>
+						<HLink nbCells="5"></HLink>
+						<coil typeCoil="coil" coilVariableName="L3x"></coil>
+						<HLink nbCells="2"></HLink>
+					</typeLine>
+					<typeLine>
+						<emptyLine nbRows="86"></emptyLine>
+					</typeLine>
+					<textBox width="1" height="1">Sentido Horário<objPosition posX="0" posY="2"></objPosition>
+					</textBox>
+					<textBox width="1" height="1">Sentido Anti Horário<objPosition posX="0" posY="6"></objPosition>
+					</textBox>
+				</networkLD>
+			</LDSource>
+		</FBProgram>
+	</FBSource>
+</VariablesExchangeFile>

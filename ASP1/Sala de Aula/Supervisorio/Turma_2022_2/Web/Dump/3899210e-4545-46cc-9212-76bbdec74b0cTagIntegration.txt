@@ -1,0 +1,5 @@
+[Exception] AddImportedTag [14/09/2022 10:05:25]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em ..AddImportedTag(String , String , String , Int32 , Int32 , String , String )
