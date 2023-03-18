@@ -1,0 +1,27 @@
+Chave Partida Direta com Reversão
+
+(*Sentido Horário*)
+LD	B1
+OR	K1
+OR	B1sup
+ANDN	B0
+ANDN	B0sup
+ANDN	K2
+ST	K1
+ST	L2
+
+( *Sentido AntiHorário* )
+LD	B2
+OR	K2
+OR	B2sup
+ANDN	B0
+ANDN	B0sup
+ANDN	K1
+ST	K2
+ST	L3
+
+(*Motor Parado*)
+LD	K1
+ANDN	K2
+STN	L1
+

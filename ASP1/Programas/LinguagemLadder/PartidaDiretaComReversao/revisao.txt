@@ -1,0 +1,74 @@
+Aula 7 - Revisão
+Configuração
+Selecionar Show all versions
+BMX P34 2010 - 01.00 - CPU 340-20 Modbus CANopen
+
+-----------------------------
+BMX XBP 0800
+Discrete
+CARTÃO 1 - DD1 1602
+Endereçamento %I0.1.0 0 ATÉ 15
+
+Discrete
+CARTÃO 2 - DD0 1602
+
+ANALOG
+CARTÃO 3 - BMX AMI 0410
+
+ANALOG
+CARTÃO 4 - BMX AMO 0210
+
+Configurar rede
+NOE 0100
+channel0
+ETH TCP IP
+
+iNSERIR REDE
+
+NOE 0100, NOE 0110
+IP address 192.168.0.100
+mask 255.255.255.0
+gateway address 192.168.0.1
+
+IO Scanning - opção - yes
+192.168.0.150
+
+
+lINKAR
+bmx noe 0100
+Net Link
+Ethernet_1
+Validar
+-------------------------------------------------
+Partida direta com reversão
+K1 - Sentido horario - ligar - o k2 não pode ligar
+K2 - Anti horario - ligar - o k1 não pode ligar
+
+---------------------------
+Variables & FB instances
+Elementary Variables
+
+DFB Types
+Horario - enter
+
+Inputs - B0x;B1x;B0supx;B1supx - BOOL
+Outputs - K1x;L1x - BOOL
+
+section - Logica1 - Linguagem ST
+---------------------------------------
+Liga = aberto = 1
+desligar = fechado = 0
+-------------------------
+Chamra os dois blocos
+Program -> Section Chave_1 -> Ladder -> LD
+FFB Input
+
+Selecionar o bloco - propriedade - e desmacar a opção show
+
+----------------
+Exportar variaveis
+----------------------------
+Novo -> nome do arquivo
+opção - windowns operator workstation
+
+
