@@ -1,0 +1,70 @@
+Dec 07 13:16:59.848 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 07 13:16:59.851 HYPERVISOR: Started on IP = localhost, TCP port = 64952.
+Dec 07 13:17:00.286 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 07 13:17:00.286 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips 
+Dec 07 13:17:00.286 GENERAL: working_dir=C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips
+Dec 07 13:17:00.287 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips\d0eee01d-a6d8-4ef0-bee3-fea44169f6a7 
+Dec 07 13:17:00.288 GENERAL: working_dir=C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips\d0eee01d-a6d8-4ef0-bee3-fea44169f6a7
+Dec 07 13:17:00.288 HYPERVISOR: exec_cmd: vm create R2 2 c7200 
+Dec 07 13:17:00.291 VM: VM R2 created.
+Dec 07 13:17:00.292 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5007 
+Dec 07 13:17:00.292 HYPERVISOR: exec_cmd: c7200 get_mac_addr R2 
+Dec 07 13:17:00.292 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:17:00.293 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-FE 
+Dec 07 13:17:00.295 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Dec 07 13:17:00.295 HYPERVISOR: exec_cmd: vm set_exec_area R2 64 
+Dec 07 13:17:00.296 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:17:00.296 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x606df838 
+Dec 07 13:17:00.298 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/danub/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Dec 07 13:17:00.299 HYPERVISOR: exec_cmd: c7200 set_mac_addr R2 ca02.0724.0000 
+Dec 07 13:17:00.300 HYPERVISOR: exec_cmd: vm set_nvram R2 512 
+Dec 07 13:17:00.300 HYPERVISOR: exec_cmd: vm set_ram R2 512 
+Dec 07 13:17:00.301 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:17:00.302 HYPERVISOR: exec_cmd: vm slot_remove_binding R2 0 0 
+Dec 07 13:17:00.303 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:17:00.303 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-2FE 
+Dec 07 13:17:00.304 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:17:00.304 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 PA-FE-TX 
+Dec 07 13:17:00.306 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5007 
+Dec 07 13:17:05.509 HYPERVISOR: exec_cmd: nio create_udp udp-ac75388c-fca6-4c26-8553-909d9f741a79 10040 127.0.0.1 10041 
+Dec 07 13:17:05.815 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-ac75388c-fca6-4c26-8553-909d9f741a79 
+Dec 07 13:17:05.815 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:17:07.001 HYPERVISOR: exec_cmd: nio create_udp udp-93edf6ea-18b9-4699-b1e5-81565f2eaff6 10056 127.0.0.1 10057 
+Dec 07 13:17:07.005 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 1 udp-93edf6ea-18b9-4699-b1e5-81565f2eaff6 
+Dec 07 13:17:07.006 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:17:08.476 HYPERVISOR: exec_cmd: nio create_udp udp-619933c8-3a74-4fda-8bf0-7a063f57c3d3 10074 127.0.0.1 10075 
+Dec 07 13:17:08.483 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 1 0 udp-619933c8-3a74-4fda-8bf0-7a063f57c3d3 
+Dec 07 13:17:08.485 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:17:24.656 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Dec 07 13:17:24.660 VM: VM Ghost created.
+Dec 07 13:17:24.661 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/danub/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Dec 07 13:17:24.661 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Dec 07 13:17:24.661 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips\c7200-adventerprisek9-mz.124-24.T5.image-512.ghost 
+Dec 07 13:17:24.661 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Dec 07 13:17:24.661 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 07 13:17:24.669 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Dec 07 13:17:24.670 HYPERVISOR: exec_cmd: vm start Ghost 
+Dec 07 13:17:25.404 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 07 13:17:25.404 HYPERVISOR: exec_cmd: vm stop Ghost 
+Dec 07 13:17:25.652 VM: VM Ghost shutdown.
+Dec 07 13:17:25.652 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Dec 07 13:17:25.658 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Dec 07 13:17:25.658 VM: VM Ghost destroyed.
+Dec 07 13:17:25.671 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Dec 07 13:17:25.671 HYPERVISOR: exec_cmd: vm set_ghost_file R2 C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips\c7200-adventerprisek9-mz.124-24.T5.image-512.ghost 
+Dec 07 13:17:25.671 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:17:25.677 HYPERVISOR: exec_cmd: vm set_config R2 configs\i2_startup-config.cfg 
+Dec 07 13:17:25.677 HYPERVISOR: exec_cmd: vm start R2 
+Dec 07 13:17:56.214 HYPERVISOR: exec_cmd: vm extract_config R2 
+Dec 07 13:18:26.224 HYPERVISOR: exec_cmd: vm extract_config R2 
+Dec 07 13:55:45.901 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:55:45.907 HYPERVISOR: exec_cmd: vm stop R2 
+Dec 07 13:55:46.204 VM: VM R2 shutdown.
+Dec 07 13:55:46.208 HYPERVISOR: exec_cmd: vm extract_config R2 
+Dec 07 13:55:47.008 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 07 13:55:47.011 HYPERVISOR: exec_cmd: vm extract_config R2 
+Dec 07 13:55:47.015 HYPERVISOR: exec_cmd: vm delete R2 
+Dec 07 13:55:47.015 VM: VM R2 destroyed.
+Dec 07 13:55:47.020 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 07 13:55:47.234 HYPERVISOR: Stopped.
+Dec 07 13:55:47.235 GENERAL: reset done.

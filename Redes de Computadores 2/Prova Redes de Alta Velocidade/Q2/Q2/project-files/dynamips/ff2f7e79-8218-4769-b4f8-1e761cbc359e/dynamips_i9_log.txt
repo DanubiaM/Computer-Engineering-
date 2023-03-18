@@ -1,0 +1,55 @@
+Dec 07 13:17:00.416 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 07 13:17:00.418 HYPERVISOR: Started on IP = localhost, TCP port = 64955.
+Dec 07 13:17:00.880 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 07 13:17:00.880 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips 
+Dec 07 13:17:00.881 GENERAL: working_dir=C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips
+Dec 07 13:17:00.881 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips\2579b871-4a75-4dd2-8fe5-faee6db13969 
+Dec 07 13:17:00.882 GENERAL: working_dir=C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips\2579b871-4a75-4dd2-8fe5-faee6db13969
+Dec 07 13:17:00.883 HYPERVISOR: exec_cmd: vm create R3 3 c7200 
+Dec 07 13:17:00.885 VM: VM R3 created.
+Dec 07 13:17:00.886 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5008 
+Dec 07 13:17:00.886 HYPERVISOR: exec_cmd: c7200 get_mac_addr R3 
+Dec 07 13:17:00.886 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:17:00.887 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 0 C7200-IO-FE 
+Dec 07 13:17:00.888 HYPERVISOR: exec_cmd: vm set_disk0 R3 0 
+Dec 07 13:17:00.889 HYPERVISOR: exec_cmd: vm set_exec_area R3 64 
+Dec 07 13:17:00.889 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:17:00.889 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x606df838 
+Dec 07 13:17:00.891 HYPERVISOR: exec_cmd: vm set_ios R3 C:/Users/danub/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Dec 07 13:17:00.892 HYPERVISOR: exec_cmd: c7200 set_mac_addr R3 ca03.4d78.0000 
+Dec 07 13:17:00.892 HYPERVISOR: exec_cmd: vm set_nvram R3 512 
+Dec 07 13:17:00.893 HYPERVISOR: exec_cmd: vm set_ram R3 512 
+Dec 07 13:17:00.893 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:17:00.894 HYPERVISOR: exec_cmd: vm slot_remove_binding R3 0 0 
+Dec 07 13:17:00.895 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:17:00.895 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 0 C7200-IO-2FE 
+Dec 07 13:17:00.896 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:17:00.896 HYPERVISOR: exec_cmd: vm slot_add_binding R3 1 0 PA-FE-TX 
+Dec 07 13:17:00.898 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5008 
+Dec 07 13:17:04.998 HYPERVISOR: exec_cmd: nio create_udp udp-0d8be170-b075-444c-9932-541767cff08b 10034 127.0.0.1 10035 
+Dec 07 13:17:05.301 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 0 udp-0d8be170-b075-444c-9932-541767cff08b 
+Dec 07 13:17:05.301 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:17:05.480 HYPERVISOR: exec_cmd: nio create_udp udp-495d6310-0fcd-44ab-bf29-17aaa1a2c4d4 10038 127.0.0.1 10039 
+Dec 07 13:17:05.485 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 1 udp-495d6310-0fcd-44ab-bf29-17aaa1a2c4d4 
+Dec 07 13:17:05.485 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:17:05.975 HYPERVISOR: exec_cmd: nio create_udp udp-6a632498-948e-489a-874b-791ffe562e5e 10044 127.0.0.1 10045 
+Dec 07 13:17:05.982 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 1 0 udp-6a632498-948e-489a-874b-791ffe562e5e 
+Dec 07 13:17:05.982 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:17:25.680 HYPERVISOR: exec_cmd: vm set_ghost_status R3 2 
+Dec 07 13:17:25.681 HYPERVISOR: exec_cmd: vm set_ghost_file R3 C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\Redes 2\Prova Redes de Alta Velocidade\Q2\Q2\project-files\dynamips\c7200-adventerprisek9-mz.124-24.T5.image-512.ghost 
+Dec 07 13:17:25.685 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:17:25.686 HYPERVISOR: exec_cmd: vm set_config R3 configs\i3_startup-config.cfg 
+Dec 07 13:17:25.687 HYPERVISOR: exec_cmd: vm start R3 
+Dec 07 13:17:56.214 HYPERVISOR: exec_cmd: vm extract_config R3 
+Dec 07 13:18:26.224 HYPERVISOR: exec_cmd: vm extract_config R3 
+Dec 07 13:55:45.907 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:55:45.908 HYPERVISOR: exec_cmd: vm stop R3 
+Dec 07 13:55:46.190 VM: VM R3 shutdown.
+Dec 07 13:55:46.192 HYPERVISOR: exec_cmd: vm extract_config R3 
+Dec 07 13:55:47.069 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 07 13:55:47.073 HYPERVISOR: exec_cmd: vm extract_config R3 
+Dec 07 13:55:47.085 HYPERVISOR: exec_cmd: vm delete R3 
+Dec 07 13:55:47.085 VM: VM R3 destroyed.
+Dec 07 13:55:47.091 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 07 13:55:47.391 HYPERVISOR: Stopped.
+Dec 07 13:55:47.392 GENERAL: reset done.
