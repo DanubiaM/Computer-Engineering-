@@ -1,0 +1,135 @@
+[Exception] CacheFile Load [07/12/2022 08:14:07]
+    System.IO.FileNotFoundException: Não foi possível localizar o arquivo 'C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\ASP1\Prova\prova\Database\tagTagIntegrationCache.xmlti'.
+Nome do arquivo: 'C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\ASP1\Prova\prova\Database\tagTagIntegrationCache.xmlti'
+   em System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   em System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   em System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   em TagSourceLibrary.CacheFile.Load()
+[Message] File C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\ASP1\Prova\tags.xsy read. [07/12/2022 08:14:07]
+[Exception] AddImportedTag [07/12/2022 08:39:35]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 08:39:51]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 08:41:52]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 08:42:17]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 08:45:49]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 08:46:11]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 08:58:41]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 08:58:54]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 08:59:30]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Message] File C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\ASP1\Prova\tagsv2.xsy read. [07/12/2022 10:25:10]
+[Message] File C:\Users\danub\OneDrive\Área de Trabalho\IFMT\9 semestre\ASP1\Prova\tagsv2.xsy read. [07/12/2022 10:27:55]
+[Exception] AddImportedTag [07/12/2022 10:28:18]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:28:49]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:43:01]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:43:17]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:43:30]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:43:48]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:45:11]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:47:37]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:47:58]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:48:13]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:48:59]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:49:16]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:49:51]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:51:01]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:52:11]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)
+[Exception] AddImportedTag [07/12/2022 10:53:26]
+    System.ArgumentException: Já foi adicionado um item com a mesma chave.
+   em System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   em System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   em TagSourceLibrary.TagIntegrationManager.AddImportedTag(String source, String studioTagName, String tagUniqueName, Int32 studioSize, Int32 studioType, String studioCommUrl, String studioStructureName)

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VariablesExchangeFile>
+	<fileHeader company="Schneider Automation" product="Unity Pro XL V13.0 - 170914B" dateTime="date_and_time#2022-12-7-8:7:7" content="Variable source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.3" dateTime="date_and_time#2022-12-7-8:1:41"></contentHeader>
+	<dataBlock>
+		<variables name="B01sup" typeName="EBOOL" topologicalAddress="%M0">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="B01" typeName="EBOOL" topologicalAddress="%I0.1.0">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="K1" typeName="EBOOL" topologicalAddress="%Q0.2.0"></variables>
+		<variables name="B02" typeName="EBOOL" topologicalAddress="%I0.1.1">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="B02sup" typeName="EBOOL" topologicalAddress="%M2">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="L1a" typeName="EBOOL" topologicalAddress="%M15">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="L1b" typeName="EBOOL" topologicalAddress="%M16">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="B1" typeName="EBOOL" topologicalAddress="%I0.1.2">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="B1sup" typeName="EBOOL" topologicalAddress="%M1">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="B2" typeName="EBOOL" topologicalAddress="%I0.1.3">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="B2sup" typeName="EBOOL" topologicalAddress="%M3">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="K1sup" typeName="EBOOL" topologicalAddress="%M10">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="L2b" typeName="EBOOL" topologicalAddress="%M18">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+		<variables name="L2a" typeName="EBOOL" topologicalAddress="%M17">
+			<attribute name="TimeStampSource" value="0"></attribute>
+		</variables>
+	</dataBlock>
+</VariablesExchangeFile>
